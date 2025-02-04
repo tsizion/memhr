@@ -1,0 +1,44 @@
+@import "tailwindcss";
+/* Custom Tailwind Theme using CSS Variables */
+
+/* Define Custom Properties */
+@theme {
+  --font-title: "Poppins", "sans-serif"; /* For headings */
+  --font-body: "Nunito Sans", "sans-serif"; /* For body text */
+
+  /* Breakpoints */
+  --breakpoint-xsm: 400px; /* Smaller devices (e.g., large phones) */
+  --breakpoint-sm: 400px; /* Tablets */
+  --breakpoint-md: 768px; /* Small laptops */
+  --breakpoint-lg: 1024px; /* Desktops */
+  --breakpoint-xl: 1280px; /* Larger screens */
+
+  /* Colors */
+  --color-primary: #00bf63; /* Vibrant green as the primary color */
+  --color-primary-light: #33d177; /* Light variant of primary green */
+  --color-primary-dark: #008d44; /* Darker variant of primary green */
+  --color-text-primary: #1f1f1f; /* Dark gray for main text */
+  --color-text-secondary: #595959; /* Soft beige for light text */
+  --color-card-background: linear-gradient(
+    145deg,
+    #5cdb95,
+    #38755b
+  ); /* Gradient with greenish tones */
+  --color-accent-blue: #4169e1; /* Royal blue for complementary accents */
+  --color-deep-navy: #16104f; /* Deep navy for strong contrasts and headings */
+  --color-warm-yellow: #ffd275; /* Golden yellow for highlights and callouts */
+  --color-soft-beige: #f4e1c1; /* Soft beige for background accents */
+  --color-light-green: #a0f0a0; /* Light green for subtle background or accents */
+  --color-dark-green: #006e34; /* Dark green for deep contrasts */
+  --color-muted-green: #3b7f46; /* Muted green for less intense sections */
+
+  /* Box Shadows */
+  --box-shadow-one: 10px 10px 19px #5a2b1a, -10px -10px 19px #3c1f10; /* Brown shadow effect */
+
+  /* Grid Layout */
+  --grid-template-columns-70-30: 70% 28%;
+
+  /* Transition Timings */
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1); /* Fluid transitions */
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1); /* Snappy transitions */
+}
