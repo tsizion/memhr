@@ -7,7 +7,7 @@
   --font-body: "Nunito Sans", "sans-serif"; /* For body text */
 
   /* Breakpoints */
-  --breakpoint-xsm: 400px; /* Smaller devices (e.g., large phones) */
+  --breakpoint-xsm: 180px; /* Smaller devices (e.g., large phones) */
   --breakpoint-sm: 400px; /* Tablets */
   --breakpoint-md: 768px; /* Small laptops */
   --breakpoint-lg: 1024px; /* Desktops */

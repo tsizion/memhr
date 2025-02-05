@@ -5,7 +5,7 @@ import { logo } from "../assets"; // Assuming logo is stored in your assets fold
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 text-gray-700 pt-10 pb-6 mt-10">
+    <footer className="bg-gray-100 text-gray-700 pt-10 pb-6 mt-10 sm:px-[5rem] md:px-[10rem]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
