@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Blog from "../Components/Blog";
 import { logo } from "../assets";
+import { YouTubePlaylist } from "@codesweetly/react-youtube-playlist";
 
 // Reusable Box Component
 const Box = ({ title, onClick, size = "w-32 h-13" }) => {
@@ -25,13 +26,14 @@ const English = () => {
     "Continuous Learning",
   ];
 
-  const [selectedBox, setSelectedBox] = useState(null);
+  // Set the default box to be the first one
+  const [selectedBox, setSelectedBox] = useState(boxes[0]);
 
   // Cards to display for each box
   const cards = {
     "Learn React": [
       { title: "React Basics", content: "Learn the basics of React." },
-      { title: "React Advanced", content: "Master advanced React concepts." },
+      { title: "YouTube Playlist", content: "", isPlaylist: true },
     ],
     "Master JavaScript": [
       {
@@ -39,8 +41,9 @@ const English = () => {
         content: "Understand the basics of JavaScript.",
       },
       {
-        title: "JavaScript Advanced",
-        content: "Delve into advanced JavaScript concepts.",
+        title: "YouTube Playlist",
+        content: "",
+        isPlaylist: true,
       },
     ],
     "Build Projects": [
@@ -49,8 +52,9 @@ const English = () => {
         content: "Start building basic projects.",
       },
       {
-        title: "Advanced Projects",
-        content: "Build complex, full-stack applications.",
+        title: "YouTube Playlist",
+        content: "",
+        isPlaylist: true,
       },
     ],
     "Improve UI/UX": [
@@ -59,8 +63,9 @@ const English = () => {
         content: "Learn the core principles of UI design.",
       },
       {
-        title: "UX Research",
-        content: "Study user experience to improve products.",
+        title: "YouTube Playlist",
+        content: "",
+        isPlaylist: true,
       },
     ],
     "Focus on Backend": [
@@ -69,8 +74,9 @@ const English = () => {
         content: "Learn the fundamentals of backend development.",
       },
       {
-        title: "Advanced Backend",
-        content: "Master server-side technologies and architecture.",
+        title: "YouTube Playlist",
+        content: "",
+        isPlaylist: true,
       },
     ],
     "Network with Experts": [
@@ -79,8 +85,9 @@ const English = () => {
         content: "Learn how to connect with professionals in your field.",
       },
       {
-        title: "Attend Meetups",
-        content: "Join events and conferences to meet experts.",
+        title: "YouTube Playlist",
+        content: "",
+        isPlaylist: true,
       },
     ],
     "Continuous Learning": [
@@ -89,8 +96,9 @@ const English = () => {
         content: "Stay updated with the latest trends and technologies.",
       },
       {
-        title: "Self-Improvement",
-        content: "Develop a habit of self-learning and growth.",
+        title: "YouTube Playlist",
+        content: "",
+        isPlaylist: true,
       },
     ],
   };
@@ -104,52 +112,70 @@ const English = () => {
   const currentCards = selectedBox ? cards[selectedBox] : [];
 
   return (
-    <>
-      <div className="flex flex-col items-center p-4 space-y-4 bg-[#f7f7f7]">
-        {/* Titles */}
-        <h1 className="text-4xl font-bold font-body text-primary-dark bg-clip-text shadow-glow">
-          My Path to Growth
-        </h1>
-        <h2 className="text-xl font-semibold text-gray-600 font-body">
-          Explore the core values and actions shaping my journey.
-        </h2>
+    <div className="flex flex-col items-center p-4 space-y-4 bg-[#f7f7f7]">
+      {/* Titles */}
+      <h1 className="text-4xl font-bold font-body text-primary-dark bg-clip-text shadow-glow">
+        My Path to Growth
+      </h1>
+      <h2 className="text-xl font-semibold text-gray-600 font-body">
+        Explore the core values and actions shaping my journey.
+      </h2>
 
-        {/* Button Boxes */}
-        <div className="space-y-6 mt-6 w-full max-w-5xl">
-          {/* Flex container for button boxes */}
-          <div className="flex flex-wrap justify-center gap-4">
-            {boxes.map((box, index) => (
-              <Box key={index} title={box} onClick={handleBoxClick} />
-            ))}
-          </div>
-        </div>
-
-        {/* New Section for Two 300px by 300px Boxes */}
-        <div className="flex mx-auto w-full justify-items-center mt-2 gap-4">
-          {/* Render the dynamic cards based on the selected box */}
-          {currentCards.length > 0 ? (
-            currentCards.map((card, index) => (
-              <div
-                key={index}
-                className="mx-2 flex flex-col text-center text-sm font-body justify-center items-center px-5 py-6 bg-primary text-white font-medium w-full h-[300px] rounded-lg shadow-md hover:bg-primary-dark hover:scale-105 hover:shadow-lg hover:shadow-primary transition-all"
-              >
-                <h2 className="text-xl font-semibold mb-4 text-left">
-                  {card.title}
-                </h2>
-                <p className="text-sm text-gray-200">{card.content}</p>
-              </div>
-            ))
-          ) : (
-            <>
-              <Blog />
-              <div className="mx-2 flex text-center text-sm font-body justify-center items-center px-5 py-6 bg-primary text-white font-medium w-full h-[300px] rounded-lg shadow-md hover:bg-primary-dark hover:scale-105 hover:shadow-lg hover:shadow-primary transition-all">
-                Box 2
-              </div>
-            </>
-          )}
+      {/* Button Boxes */}
+      <div className="space-y-6 mt-6 w-full max-w-5xl">
+        {/* Flex container for button boxes */}
+        <div className="flex flex-wrap justify-center gap-4">
+          {boxes.map((box, index) => (
+            <Box key={index} title={box} onClick={handleBoxClick} />
+          ))}
         </div>
       </div>
-    </>
+
+      {/* New Section for Two 300px by 300px Boxes */}
+      <div className="flex mx-auto w-full justify-items-center mt-2 gap-4">
+        {/* Render the dynamic cards based on the selected box */}
+        {currentCards.length > 0 ? (
+          currentCards.map((card, index) => (
+            <div
+              key={index}
+              className="mx-2 flex flex-col text-center text-sm font-body justify-center items-center px-5 py-6 bg-primary text-white font-medium w-full h-[300px] rounded-lg shadow-md hover:bg-primary-dark hover:scale-105 hover:shadow-lg hover:shadow-primary transition-all"
+            >
+              <h2 className="text-xl font-semibold mb-4 text-left">
+                {card.title}
+              </h2>
+              {card.isPlaylist ? (
+                <YouTubePlaylist
+                  apiKey="AIzaSyA3S74hVSIyfY4A0CjYxmLDgoHy9Wa3-Bg"
+                  playlistId="PL88PvbeqXtDsOPQjB2ENdLQ8fSAqz2GKF"
+                  columnCount="auto"
+                  columnWidth="230"
+                  gapSize={24}
+                  customStyles={{
+                    galleryContainerStyle: {
+                      borderRadius: "8px",
+                      overflow: "hidden",
+                    },
+                    videoImageStyle: {
+                      borderRadius: "5px",
+                    },
+                  }}
+                />
+              ) : (
+                <p className="text-sm text-gray-200">{card.content}</p>
+              )}
+            </div>
+          ))
+        ) : (
+          <div className="mx-2 flex flex-col text-center text-sm font-body justify-center items-center px-5 py-6 bg-primary text-white font-medium w-full h-[300px] rounded-lg shadow-md hover:bg-primary-dark hover:scale-105 hover:shadow-lg hover:shadow-primary transition-all">
+            {/* Blog Component will show when no cards are available */}
+            <Blog
+              title="Blog Title"
+              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+            />
+          </div>
+        )}
+      </div>
+    </div>
   );
 };
 
