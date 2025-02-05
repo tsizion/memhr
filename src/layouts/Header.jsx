@@ -46,18 +46,18 @@ const Header = () => {
       </nav>
 
       <div className="flex-grow flex justify-center sm:justify-end md:justify-center md:w-auto md:order-none order-1">
-        <div className="md:w-24 md:h-24 w-12 h-12 flex items-center justify-center rounded-full bg-blue-500 text-white overflow-hidden">
-          <img src={logo} alt="Logo" className="object-cover" />
+        <div className="w-24 max-w-3xl  flex items-center justify-center rounded-full bg-blue-500 text-white overflow-hidden">
+          <img src={logo} alt="Logo" className="object-fill" />
         </div>
       </div>
 
       {/* Right Navigation */}
       <nav className="hidden md:flex items-center gap-8">
         <Link
-          to="/portfolio"
+          to="/News"
           className="text-gray-700 hover:text-blue-500 transition"
         >
-          Portfolio
+          News
         </Link>
         <Link
           to="/blog"
