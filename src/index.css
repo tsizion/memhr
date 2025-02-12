@@ -17,6 +17,7 @@
   --color-primary: #0c8545; /* Vibrant green as the primary color */
   --color-primary-light: #33d177; /* Light variant of primary green */
   --color-primary-dark: #008d44; /* Darker variant of primary green */
+  --color-primary-orange: #f89520; /* 🔶 Primary Orange */
   --color-text-primary: #1f1f1f; /* Dark gray for main text */
   --color-text-secondary: #595959; /* Soft beige for light text */
   --color-card-background: linear-gradient(

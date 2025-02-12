@@ -1,12 +1,14 @@
 import React from "react";
-import LanguageChoice from "../Sections/LanguageChoice";
 import Footer from "../layouts/Footer";
+import Intro from "../Components/LandingPage/Intro";
+import FeaturedCourse from "../Components/FeaturedCourses.jsx/FeaturedCourse";
 
 const LandingPage = () => {
   return (
     <>
       <div className="container">
-        <LanguageChoice />
+        <Intro />
+        <FeaturedCourse />
       </div>
 
       <Footer />

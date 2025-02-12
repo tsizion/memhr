@@ -26,7 +26,7 @@ const Header = () => {
   return (
     <header
       className={`bg-[#f7f7f7] container text-sm font-title sticky top-0 z-20 w-full flex flex-row items-center justify-between px-6 py-3 ${
-        isScrolled ? "shadow-sm" : ""
+        isScrolled ? "" : ""
       } transition-shadow`}
     >
       {/* Logo */}

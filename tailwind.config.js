@@ -22,7 +22,8 @@ module.exports = {
         boxBg: "linear-gradient(145deg, #6a4e23, #5b3e1e)", // Gradient from light to dark brown
         redPrimary: "#db0202",
         bluePrimary: "#32468f", // Light brown for subtle accents
-        primaryColor: "#16104f", // Firebrick red for buttons and highlights
+        primaryColor: "#16104f",
+        primaryOrange: "#F89520", // Firebrick red for buttons and highlights
       },
       boxShadow: {
         shadowOne: "10px 10px 19px #5a2b1a, -10px -10px 19px #3c1f10", // Brown shadow effect

@@ -6,9 +6,7 @@ const MainLayout = () => {
   return (
     <div>
       <Header />
-      <div className=" xsm:mt-24 sm:mt-20 md:mt-20">
-        {" "}
-        {/* Add margin-top to create space */}
+      <div className=" ">
         <Outlet />
       </div>
     </div>
