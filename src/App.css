@@ -2,14 +2,15 @@
 body {
   background-color: #f7f7f7; /* Light cream color */ /* Add padding to left and right of body */
   margin: 0; /* Remove default margin */
-  box-sizing: border-box; /* Ensure padding doesn't affect layout */
+  box-sizing: border-box;
+  font-family: "Inter", serif; /* Ensure padding doesn't affect layout */
 }
 
 /* Ensure all elements inside the body have consistent padding */
 /* Container class */
 .container {
   background-color: #f7f7f7; /* Light cream color */
-  padding: 1rem 10rem; /* Add padding to left and right */
+  padding: 1rem 3rem; /* Add padding to left and right */
   margin: 0 auto; /* Center align the container */
   box-sizing: border-box; /* Ensure padding doesn't affect layout */
   max-width: 1200px; /* Set a maximum width for the container */

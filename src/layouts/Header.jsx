@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineDown, AiOutlineGlobal } from "react-icons/ai";
+import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { logo } from "../assets";
+import MobileMenu from "./MobileMenu";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -22,141 +25,104 @@ const Header = () => {
 
   return (
     <header
-      className={` bg-[#f7f7f7]  text-sm font-title sticky top-0 z-20 w-full flex items-center px-[10rem] py-2  ${
+      className={`bg-[#f7f7f7] container text-sm font-title sticky top-0 z-20 w-full flex flex-row items-center justify-between px-6 py-3 ${
         isScrolled ? "shadow-sm" : ""
       } transition-shadow`}
     >
-      {/* Left Navigation */}
-      <nav className="hidden md:flex items-center gap-8">
-        <Link to="/" className="text-gray-700 hover:text-blue-500 transition">
-          Home
-        </Link>
-        <Link
-          to="/about"
-          className="text-gray-700 hover:text-blue-500 transition"
-        >
-          About
-        </Link>
-        <Link
-          to="/services"
-          className="text-gray-700 hover:text-blue-500 transition"
-        >
-          Services
-        </Link>
-      </nav>
-
-      <div className="flex-grow flex justify-center sm:justify-end md:justify-center md:w-auto md:order-none order-1">
-        <div className="w-24 max-w-3xl  flex items-center justify-center rounded-full bg-blue-500 text-white overflow-hidden">
-          <img src={logo} alt="Logo" className="object-fill" />
-        </div>
+      {/* Logo */}
+      <div className="flex items-center">
+        <img
+          src={logo}
+          alt="Logo"
+          className="h-20 w-auto object-contain" // Fixed size for all screens
+        />
       </div>
 
-      {/* Right Navigation */}
-      <nav className="hidden md:flex items-center gap-8">
-        <Link
-          to="/News"
-          className="text-gray-700 hover:text-blue-500 transition"
-        >
-          News
-        </Link>
-        <Link
-          to="/blog"
-          className="text-gray-700 hover:text-blue-500 transition"
-        >
-          Blog
-        </Link>
-        <Link
-          to="/contact"
-          className="text-gray-700 hover:text-blue-500 transition"
-        >
-          Contact
-        </Link>
-      </nav>
-
-      {/* Mobile Menu Toggle */}
-      <div className="md:hidden cursor-pointer" onClick={toggleMenu}>
-        {isMenuOpen ? (
-          <AiOutlineClose size={24} />
-        ) : (
-          <AiOutlineMenu size={24} />
-        )}
-      </div>
-
-      {/* Mobile Menu */}
-      {/* Mobile Menu */}
-      <div
-        className={`fixed top-0 left-0 h-full w-2/3 bg-gray-900 text-white transform transition-transform ${
-          isMenuOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
-      >
-        <div className="p-4 flex items-center">
-          <div className="w-12 h-12 rounded-full overflow-hidden">
-            <img src={logo} alt="Logo" className="w-full h-full object-cover" />
+      {/* Navigation, Search, and Hamburger Menu */}
+      <div className="flex items-center">
+        {/* Search Bar (visible on larger screens, responsive width) */}
+        {!isMenuOpen && (
+          <div className="hidden md:flex items-center relative w-full max-w-lg lg:max-w-xl xl:max-w-2xl">
+            <FaSearch className="absolute left-6 text-gray-500" />
+            <input
+              type="text"
+              placeholder="Search..."
+              className="mx-3 sm:w-56 md:w-44 lg:w-96 pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300 transition-width"
+            />
           </div>
-          <h1 className="text-lg font-bold text-blue-400 ml-4">YourLogo</h1>
-          <AiOutlineClose
-            size={24}
-            onClick={toggleMenu}
-            className="cursor-pointer ml-auto"
-          />
+        )}
+
+        {/* Navigation Links */}
+        <nav className="hidden md:flex items-center gap-8 ml-6">
+          <Link
+            to="/Courses"
+            className="text-gray-700 hover:text-blue-500 transition"
+          >
+            Courses
+          </Link>
+          <Link
+            to="/Playlists"
+            className="text-gray-700 hover:text-blue-500 transition"
+          >
+            Playlists
+          </Link>
+          <Link
+            to="/About"
+            className="text-gray-700 hover:text-blue-500 transition"
+          >
+            About
+          </Link>
+
+          {/* Dropdown for Adult */}
+          <div
+            className="relative"
+            onMouseEnter={() => setIsDropdownOpen(true)}
+            onMouseLeave={() => setIsDropdownOpen(false)}
+          >
+            <button className="flex items-center text-gray-700 hover:text-blue-500 transition">
+              Adult <AiOutlineDown className="ml-1 w-6" />
+            </button>
+            {isDropdownOpen && (
+              <div className="absolute top-full mt-2 bg-white shadow-lg rounded-lg py-2 w-40 z-10">
+                <Link
+                  to="/Kid"
+                  className="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-500 transition"
+                >
+                  Kid
+                </Link>
+                <Link
+                  to="/Adult"
+                  className="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-500 transition"
+                >
+                  Adult
+                </Link>
+              </div>
+            )}
+          </div>
+          <Link
+            to="/SignIn"
+            className="text-gray-700 hover:text-blue-500 transition"
+          >
+            <AiOutlineGlobal className="text-[18px]" />
+          </Link>
+          <Link
+            to="/SignIn"
+            className="text-gray-700 hover:text-blue-500 transition"
+          >
+            <button className="bg-primary px-3 py-2 rounded-[5px] text-white hover:bg-primary-light">
+              SignIn
+            </button>
+          </Link>
+        </nav>
+
+        {/* Hamburger Menu Toggle (visible on smaller screens) */}
+        <div className="md:hidden cursor-pointer ml-4" onClick={toggleMenu}>
+          <AiOutlineMenu size={24} />
         </div>
-        <ul className="flex flex-col space-y-4 mt-4 px-4">
-          <li>
-            <Link
-              to="/"
-              onClick={toggleMenu}
-              className="block hover:text-blue-400"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/about"
-              onClick={toggleMenu}
-              className="block hover:text-blue-400"
-            >
-              About
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/services"
-              onClick={toggleMenu}
-              className="block hover:text-blue-400"
-            >
-              Services
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/portfolio"
-              onClick={toggleMenu}
-              className="block hover:text-blue-400"
-            >
-              Portfolio
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/blog"
-              onClick={toggleMenu}
-              className="block hover:text-blue-400"
-            >
-              Blog
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/contact"
-              onClick={toggleMenu}
-              className="block hover:text-blue-400"
-            >
-              Contact
-            </Link>
-          </li>
-        </ul>
       </div>
+
+      {/* Mobile Menu Component */}
+      <MobileMenu isOpen={isMenuOpen} toggleMenu={toggleMenu} />
     </header>
   );
 };

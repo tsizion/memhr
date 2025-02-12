@@ -13,7 +13,7 @@ module.exports = {
       },
 
       fontFamily: {
-        titleFont: ["Montserrat", "sans-serif"], // For headings
+        titleFont: ["Inter", "serif"], // For headings
         bodyFont: ["Open Sans", "sans-serif"], // For body text
       },
       colors: {
