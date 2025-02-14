@@ -24,14 +24,14 @@ const CourseCards = ({ activeCourse, onCardClick }) => {
       },
       {
         id: 2,
-        title: "React Hooks & State Management",
+        title: "React Hooks ",
         instructor: "Jane Smith",
         role: "Frontend Engineer",
         image: person2,
       },
       {
         id: 3,
-        title: "React Router & Navigation",
+        title: "React Router ",
         instructor: "Alice Johnson",
         role: "Software Engineer",
         image: person3,
@@ -141,7 +141,7 @@ const CourseCards = ({ activeCourse, onCardClick }) => {
       {courseContent[activeCourse]?.map((lesson) => (
         <div
           key={lesson.id}
-          className=" xsm:h-60 md:h-72 overflow-auto bg-green-300 rounded-lg shadow-lg  cursor-pointer hover:shadow-xl transition duration-300"
+          className=" xsm:h-60 md:h-72 overflow-auto bg-white rounded-lg shadow-lg  cursor-pointer hover:shadow-xl transition duration-300"
           onClick={onCardClick} // Show the modal when clicked
         >
           {/* Image */}
@@ -154,7 +154,7 @@ const CourseCards = ({ activeCourse, onCardClick }) => {
           </div>
 
           {/* Content */}
-          <div className="h-auto bg-red-400 p-4 flex flex-col justify-center items-start">
+          <div className="h-auto  p-4 flex flex-col justify-center items-start">
             <div className="flex items-center space-x-3">
               <img
                 src={lesson.image}
