@@ -2,6 +2,7 @@ import React from "react";
 import Footer from "../layouts/Footer";
 import Intro from "../Components/LandingPage/Intro";
 import FeaturedCourse from "../Components/FeaturedCourses.jsx/FeaturedCourse";
+import Services from "../Components/Services/Services";
 
 const LandingPage = () => {
   return (
@@ -9,6 +10,7 @@ const LandingPage = () => {
       <div className="container">
         <Intro />
         <FeaturedCourse />
+        <Services />
       </div>
 
       <Footer />

@@ -9,6 +9,9 @@ import Course7 from "./Courses/Course7.jpg";
 import person1 from "./Instructor/person1.jpg";
 import person2 from "./Instructor/person2.jpg";
 import person3 from "./Instructor/person3.jpg";
+import ebook from "./Services/ebook.png";
+import shop from "./Services/shop.png";
+import courses from "./Services/courses.png";
 
 export {
   logo,
@@ -22,4 +25,7 @@ export {
   person1,
   person2,
   person3,
+  ebook,
+  courses,
+  shop,
 };

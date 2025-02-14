@@ -42,12 +42,12 @@ const Header = () => {
       <div className="flex items-center">
         {/* Search Bar (visible on larger screens, responsive width) */}
         {!isMenuOpen && (
-          <div className="hidden md:flex items-center relative w-full max-w-lg lg:max-w-xl xl:max-w-2xl">
+          <div className="hidden md:flex items-center relative w-full  max-w-lg lg:max-w-xl xl:max-w-2xl">
             <FaSearch className="absolute left-6 text-gray-500" />
             <input
               type="text"
               placeholder="Search..."
-              className="mx-3 sm:w-56 md:w-44 lg:w-96 pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300 transition-width"
+              className="mx-3 bg-white sm:w-56 md:w-44 lg:w-96 pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-primary-dark transition-width"
             />
           </div>
         )}

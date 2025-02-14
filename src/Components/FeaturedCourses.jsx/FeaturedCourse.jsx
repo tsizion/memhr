@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CourseCards from "./CourseCards"; // Import the new component
+import { FaGreaterThan, FaLessThan } from "react-icons/fa";
 
 const FeaturedCourse = () => {
   const courses = [
@@ -45,6 +46,14 @@ const FeaturedCourse = () => {
 
       {/* Display Cards for Active Course */}
       <CourseCards activeCourse={activeCourse} />
+      <div className="flex gap-1 my-4">
+        <div className="bg-primary-orange px-4 py-2 rounded-md text-white text-[12px]">
+          <FaLessThan />{" "}
+        </div>
+        <div className="bg-primary-orange px-4 py-2 rounded-md text-white text-[12px]">
+          <FaGreaterThan />{" "}
+        </div>
+      </div>
     </div>
   );
 };
