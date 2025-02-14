@@ -10,9 +10,8 @@ const LandingPage = () => {
       <div className="container">
         <Intro />
         <FeaturedCourse />
-        <Services />
       </div>
-
+      <Services />
       <Footer />
     </>
   );

@@ -15,3 +15,11 @@ body {
   box-sizing: border-box; /* Ensure padding doesn't affect layout */
   max-width: 1200px; /* Set a maximum width for the container */
 }
+.header {
+  background-color: #f7f7f7; /* Light cream color */
+  padding: 1rem 3rem; /* Add padding to left and right */
+  margin: 0; /* Center align the container */
+  box-sizing: border-box; /* Ensure padding doesn't affect layout */
+  max-width: 1300px;
+  margin: 0 auto; /* Set a maximum width for the container */
+}

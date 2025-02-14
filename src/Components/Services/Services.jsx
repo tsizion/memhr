@@ -4,7 +4,7 @@ import ComingSoon from "../ComingSoon"; // Import the ComingSoon component
 
 const ServiceCard = ({ icon, title, description, onGetStarted }) => {
   return (
-    <div className="text-gray-800 border-[0.9px] border-primary px-6 py-8 rounded-2xl shadow-lg flex flex-col items-center justify-center text-center transition-transform duration-300 transform hover:scale-105 hover:shadow-xl">
+    <div className="text-gray-800 bg-white border-[0.9px] border-primary px-6 py-8 rounded-2xl shadow-lg flex flex-col items-center justify-center text-center transition-transform duration-300 transform hover:scale-105 hover:shadow-xl">
       <img src={icon} alt={title} className="w-12 h-12 mb-4" />
       <h3 className="text-lg font-semibold mb-2">{title}</h3>
       <p className="text-sm text-gray-600 mb-4 font-title">{description}</p>
@@ -30,7 +30,7 @@ const Services = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-8">
+    <div className="flex flex-col items-center justify-center p-8 bg-white">
       <h2 className="text-2xl font-bold mb-9 text-center font-title text-primary">
         What can you find on Memeher?
       </h2>

@@ -15,7 +15,7 @@ const FeaturedCourse = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
 
   return (
-    <div className="p-4 w-full">
+    <div className="py-4 w-full">
       <h2 className="text-xl font-semibold mb-4">Featured Courses</h2>
 
       {/* Course Selection */}
@@ -24,7 +24,7 @@ const FeaturedCourse = () => {
           {courses.map((course) => (
             <h2
               key={course.id}
-              className={`text-lg font-medium px-4 py-2 cursor-pointer transition-all duration-300 ${
+              className={` text-[8px] sm:text-[10px] md:text-lg font-medium px-4 py-2 cursor-pointer transition-all duration-300 ${
                 activeCourse === course.id
                   ? "text-orange-500 font-semibold"
                   : "text-gray-600"
