@@ -54,22 +54,16 @@ const Header = () => {
 
         {/* Navigation Links */}
         <nav className="hidden md:flex items-center gap-8 ml-6">
-          <Link
-            to="/Courses"
-            className="text-gray-700 hover:text-blue-500 transition"
-          >
+          <Link to="/" className="text-gray-700 hover:text-blue-500 transition">
             Courses
           </Link>
           <Link
-            to="/Playlists"
+            to="/english"
             className="text-gray-700 hover:text-blue-500 transition"
           >
             Playlists
           </Link>
-          <Link
-            to="/About"
-            className="text-gray-700 hover:text-blue-500 transition"
-          >
+          <Link to="/" className="text-gray-700 hover:text-blue-500 transition">
             About
           </Link>
 
@@ -85,13 +79,13 @@ const Header = () => {
             {isDropdownOpen && (
               <div className="absolute top-full mt-2 bg-white shadow-lg rounded-lg py-2 w-40 z-10">
                 <Link
-                  to="/Kid"
+                  to="/"
                   className="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-500 transition"
                 >
                   Kid
                 </Link>
                 <Link
-                  to="/Adult"
+                  to="/"
                   className="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-500 transition"
                 >
                   Adult

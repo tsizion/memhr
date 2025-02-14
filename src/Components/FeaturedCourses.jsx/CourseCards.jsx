@@ -11,10 +11,8 @@ import {
 } from "../../assets";
 
 const images = [Course1, Course2, Course4, Course5, Course7];
-const instructorImages = [person1, person2, person3];
 
-const CourseCards = ({ activeCourse }) => {
-  // Sample data for each course (4 cards per course)
+const CourseCards = ({ activeCourse, onCardClick }) => {
   const courseContent = {
     1: [
       {
@@ -139,13 +137,14 @@ const CourseCards = ({ activeCourse }) => {
   };
 
   return (
-    <div className="grid grid-cols-4 gap-4 mt-6 ">
+    <div className="grid grid-cols-4 gap-4 mt-6">
       {courseContent[activeCourse]?.map((lesson) => (
         <div
           key={lesson.id}
-          className="h-75 bg-white rounded-lg shadow-lg overflow-hidden"
+          className="h-75 bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition duration-300"
+          onClick={onCardClick} // Show the modal when clicked
         >
-          {/* Image (50%) */}
+          {/* Image */}
           <div className="h-1/2">
             <img
               src={images[Math.floor(Math.random() * images.length)]}
@@ -154,13 +153,13 @@ const CourseCards = ({ activeCourse }) => {
             />
           </div>
 
-          {/* Content (50%) */}
+          {/* Content */}
           <div className="h-1/2 p-4 flex flex-col justify-center items-start">
             <div className="flex items-center space-x-3">
               <img
                 src={lesson.image}
                 alt={lesson.instructor}
-                className="w-10 h-10 rounded-full object-cover "
+                className="w-10 h-10 rounded-full object-cover"
               />
               <div>
                 <h3 className="text-lg font-semibold text-primary">
@@ -175,7 +174,7 @@ const CourseCards = ({ activeCourse }) => {
               {lesson.title}
             </h4>
             <p className="text-[12px] font-light font-title">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import CourseCards from "./CourseCards"; // Import the new component
+import CourseCards from "./CourseCards";
 import { FaGreaterThan, FaLessThan } from "react-icons/fa";
+import ComingSoon from "../ComingSoon"; // Import the modal
 
 const FeaturedCourse = () => {
   const courses = [
@@ -11,6 +12,7 @@ const FeaturedCourse = () => {
   ];
 
   const [activeCourse, setActiveCourse] = useState(1);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
 
   return (
     <div className="p-4 w-full">
@@ -45,7 +47,12 @@ const FeaturedCourse = () => {
       </div>
 
       {/* Display Cards for Active Course */}
-      <CourseCards activeCourse={activeCourse} />
+      <CourseCards
+        activeCourse={activeCourse}
+        onCardClick={() => setIsModalOpen(true)}
+      />
+
+      {/* Navigation Buttons */}
       <div className="flex gap-1 my-4">
         <div className="bg-primary-orange px-4 py-2 rounded-md text-white text-[12px]">
           <FaLessThan />{" "}
@@ -54,6 +61,9 @@ const FeaturedCourse = () => {
           <FaGreaterThan />{" "}
         </div>
       </div>
+
+      {/* Show Coming Soon Modal */}
+      {isModalOpen && <ComingSoon onClose={() => setIsModalOpen(false)} />}
     </div>
   );
 };
