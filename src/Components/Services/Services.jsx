@@ -37,19 +37,19 @@ const Services = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full h-auto max-w-5xl">
         <ServiceCard
           icon={ebook}
-          title="Service 1"
+          title="Buy e-book"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           onGetStarted={handleGetStartedClick}
         />
         <ServiceCard
           icon={courses}
-          title="Service 2"
+          title="Buy Course"
           description="Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           onGetStarted={handleGetStartedClick}
         />
         <ServiceCard
           icon={shop}
-          title="Service 3"
+          title="Buy products"
           description="Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           onGetStarted={handleGetStartedClick}
         />

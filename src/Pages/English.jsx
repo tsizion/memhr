@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 import Blog from "../Components/Blog";
 import { logo } from "../assets";
 import { YouTubePlaylist } from "@codesweetly/react-youtube-playlist";
@@ -16,6 +17,7 @@ const Box = ({ title, onClick, size = "w-32 h-13" }) => {
 };
 
 const English = () => {
+  const navigate = useNavigate(); // Initialize useNavigate for navigation
   const boxes = [
     "Learn React",
     "Master JavaScript",
@@ -112,7 +114,15 @@ const English = () => {
   const currentCards = selectedBox ? cards[selectedBox] : [];
 
   return (
-    <div className="flex flex-col items-center p-4 space-y-4 bg-[#f7f7f7]">
+    <div className="container flex flex-col items-center p-4 space-y-4 bg-[#f7f7f7] relative">
+      {/* Logo at the top-left corner */}
+      <div
+        onClick={() => navigate("/")} // Navigate to the homepage when clicked
+        className="absolute top-4 left-4 cursor-pointer"
+      >
+        <img src={logo} alt="Logo" className="w-40" />
+      </div>
+
       {/* Titles */}
       <h1 className="text-4xl font-bold font-body text-primary-dark bg-clip-text shadow-glow">
         My Path to Growth

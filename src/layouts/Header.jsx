@@ -9,9 +9,14 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleLanguageDropdown = () => {
+    setIsLanguageDropdownOpen(!isLanguageDropdownOpen);
   };
 
   useEffect(() => {
@@ -42,7 +47,7 @@ const Header = () => {
       <div className="flex items-center">
         {/* Search Bar (visible on larger screens, responsive width) */}
         {!isMenuOpen && (
-          <div className="hidden md:flex items-center relative w-full  max-w-lg lg:max-w-xl xl:max-w-2xl">
+          <div className="hidden md:flex items-center relative w-full max-w-lg lg:max-w-xl xl:max-w-2xl">
             <FaSearch className="absolute left-6 text-gray-500" />
             <input
               type="text"
@@ -93,12 +98,39 @@ const Header = () => {
               </div>
             )}
           </div>
-          <Link
-            to="/SignIn"
-            className="text-gray-700 hover:text-blue-500 transition"
-          >
-            <AiOutlineGlobal className="text-[18px]" />
-          </Link>
+
+          {/* Language Dropdown */}
+          <div className="relative">
+            <button
+              onClick={toggleLanguageDropdown}
+              className="flex items-center text-gray-700 hover:text-blue-500 transition"
+            >
+              <AiOutlineGlobal className="text-[18px]" />
+            </button>
+            {isLanguageDropdownOpen && (
+              <div className="absolute top-full mt-2 bg-white shadow-lg rounded-lg py-2 w-40 z-10">
+                <Link
+                  to="/english"
+                  className="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-500 transition"
+                >
+                  English
+                </Link>
+                <Link
+                  to="/amharic"
+                  className="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-500 transition"
+                >
+                  አማርኛ
+                </Link>
+                <Link
+                  to="/tigrinya"
+                  className="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-500 transition"
+                >
+                  ትግርኛ
+                </Link>
+              </div>
+            )}
+          </div>
+
           <Link
             to="/SignIn"
             className="text-gray-700 hover:text-blue-500 transition"
