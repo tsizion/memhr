@@ -137,15 +137,15 @@ const CourseCards = ({ activeCourse, onCardClick }) => {
   };
 
   return (
-    <div className="grid grid-cols-4 gap-4 mt-6">
+    <div className="grid xsm:grid-cols-2 md:grid-cols-4 gap-4 mt-6">
       {courseContent[activeCourse]?.map((lesson) => (
         <div
           key={lesson.id}
-          className="h-75 bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition duration-300"
+          className=" xsm:h-60 md:h-72 overflow-auto bg-green-300 rounded-lg shadow-lg  cursor-pointer hover:shadow-xl transition duration-300"
           onClick={onCardClick} // Show the modal when clicked
         >
           {/* Image */}
-          <div className="h-1/2">
+          <div className="h-[40%]">
             <img
               src={images[Math.floor(Math.random() * images.length)]}
               alt={lesson.title}
@@ -154,7 +154,7 @@ const CourseCards = ({ activeCourse, onCardClick }) => {
           </div>
 
           {/* Content */}
-          <div className="h-1/2 p-4 flex flex-col justify-center items-start">
+          <div className="h-auto bg-red-400 p-4 flex flex-col justify-center items-start">
             <div className="flex items-center space-x-3">
               <img
                 src={lesson.image}
@@ -162,18 +162,18 @@ const CourseCards = ({ activeCourse, onCardClick }) => {
                 className="w-10 h-10 rounded-full object-cover"
               />
               <div>
-                <h3 className="text-lg font-semibold text-primary">
+                <h3 className="xsm:text-[10px] sm:text-sm md:text-lg font-semibold text-primary">
                   {lesson.instructor}
                 </h3>
-                <p className="text-sm font-light text-gray-500">
+                <p className="xsm:text-[10px] sm:text-sm font-light text-gray-500">
                   {lesson.role}
                 </p>
               </div>
             </div>
-            <h4 className="text-md font-medium mt-2 text-left text-primary">
+            <h4 className="xsm:text-[10px] sm:text-md font-medium mt-2 text-left text-primary">
               {lesson.title}
             </h4>
-            <p className="text-[12px] font-light font-title">
+            <p className=" xsm:text-[8px] text-[12px] font-light font-title">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
           </div>

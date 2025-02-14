@@ -16,7 +16,9 @@ const FeaturedCourse = () => {
 
   return (
     <div className="py-4 w-full">
-      <h2 className="text-xl font-semibold mb-4">Featured Courses</h2>
+      <h2 className=" xsm:text-[13px] sm:text-sm md:text-xl font-semibold mb-4">
+        Featured Courses
+      </h2>
 
       {/* Course Selection */}
       <div className="relative w-full border-b-2 border-gray-300">
