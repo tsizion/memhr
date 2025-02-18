@@ -5,11 +5,11 @@ import { logo } from "../assets";
 import { YouTubePlaylist } from "@codesweetly/react-youtube-playlist";
 
 // Reusable Box Component
-const Box = ({ title, onClick, size = "w-32 h-13" }) => {
+const Box = ({ title, onClick, size = "" }) => {
   return (
     <div
       onClick={() => onClick(title)} // Handle the click event
-      className={`flex text-center text-sm font-body justify-center items-center px-5 py-6 bg-primary text-white font-medium ${size} rounded-lg shadow-md hover:bg-primary-dark hover:scale-105 hover:shadow-lg hover:shadow-primary transition-all`}
+      className={`flex text-center xsm:text-[9px] sm:text-[12px] md:text-sm font-body justify-center items-center px-5 xsm:py-2 sm:py-4 md:py-6 bg-primary text-white font-medium sm:w-28 sm:h-10 md:w-32 md:h-13 rounded-lg shadow-md hover:bg-primary-dark hover:scale-105 hover:shadow-lg hover:shadow-primary transition-all`}
     >
       {title}
     </div>
@@ -120,14 +120,14 @@ const English = () => {
         onClick={() => navigate("/")} // Navigate to the homepage when clicked
         className="absolute top-4 left-4 cursor-pointer"
       >
-        <img src={logo} alt="Logo" className="w-40" />
+        <img src={logo} alt="Logo" className=" xsm:w-24 sm:w-32 md:w-40" />
       </div>
 
       {/* Titles */}
-      <h1 className="text-4xl font-bold font-body text-primary-dark bg-clip-text shadow-glow">
+      <h1 className="xsm:text-lg sm:text-xl md:text-4xl font-bold xsm:mt-[15%] md:mt-[12%] font-body text-primary-dark bg-clip-text shadow-glow">
         My Path to Growth
       </h1>
-      <h2 className="text-xl font-semibold text-gray-600 font-body">
+      <h2 className="xsm:text-sm sm:text-lg md:text-xl font-semibold text-gray-600 font-body text-center">
         Explore the core values and actions shaping my journey.
       </h2>
 

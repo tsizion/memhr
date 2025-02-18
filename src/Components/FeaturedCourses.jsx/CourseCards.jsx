@@ -170,10 +170,10 @@ const CourseCards = ({ activeCourse, onCardClick }) => {
                 </p>
               </div>
             </div>
-            <h4 className="xsm:text-[10px] sm:text-md font-medium mt-2 text-left text-primary">
+            <h4 className="xsm:text-[10px] sm:text-[14px] font-bold mt-2 text-left text-primary">
               {lesson.title}
             </h4>
-            <p className=" xsm:text-[8px] text-[12px] font-light font-title">
+            <p className=" xsm:text-[6px] sm:text-[12px]  font-light font-title">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
           </div>
