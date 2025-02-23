@@ -10,7 +10,7 @@ const LandingPage = () => {
     <>
       <div className="container">
         <Intro />
-        <YoutubeComponent />
+        {/* <YoutubeComponent /> */}
         <FeaturedCourse />
       </div>
       <Services />
