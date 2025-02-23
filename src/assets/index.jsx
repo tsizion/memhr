@@ -12,7 +12,12 @@ import person3 from "./Instructor/person3.jpg";
 import ebook from "./Services/ebook.png";
 import shop from "./Services/shop.png";
 import courses from "./Services/courses.png";
-
+import amharicbanner from "./Logo/memherbanner.jpg";
+import YoutubeIcon from "./Logo/youtubeIcon.png";
+import skill1 from "./Skills/skill1.jpg";
+import skill2 from "./Skills/skill2.jpg";
+import skill3 from "./Skills/skill3.jpg";
+import skill4 from "./Skills/skill4.jpg";
 export {
   logo,
   Course1,
@@ -28,4 +33,10 @@ export {
   ebook,
   courses,
   shop,
+  amharicbanner,
+  YoutubeIcon,
+  skill1,
+  skill2,
+  skill3,
+  skill4,
 };

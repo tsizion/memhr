@@ -124,7 +124,7 @@ const English = () => {
       </div>
 
       {/* Titles */}
-      <h1 className="xsm:text-lg sm:text-xl md:text-4xl font-bold xsm:mt-[15%] md:mt-[12%] font-body text-primary-dark bg-clip-text shadow-glow">
+      <h1 className="xsm:text-lg sm:text-xl md:text-4xl font-bold xsm:mt-[15%] md:mt-[6%] font-body text-primary-dark bg-clip-text shadow-glow">
         My Path to Growth
       </h1>
       <h2 className="xsm:text-sm sm:text-lg md:text-xl font-semibold text-gray-600 font-body text-center">
