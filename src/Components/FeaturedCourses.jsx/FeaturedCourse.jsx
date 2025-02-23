@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import CourseCards from "./CourseCards";
 import YoutubeComponent from "../Youtube/YoutubeComponent";
-import { FaGreaterThan, FaLessThan } from "react-icons/fa";
+import {
+  FaBook,
+  FaChalkboardTeacher,
+  FaGraduationCap,
+  FaGreaterThan,
+  FaLaptopCode,
+  FaLessThan,
+} from "react-icons/fa";
 import { FaInstagram, FaTiktok, FaFacebook, FaYoutube } from "react-icons/fa";
 import ComingSoon from "../ComingSoon";
 import { skill1, skill2, skill3, skill4 } from "../../assets";
@@ -11,17 +18,15 @@ const FeaturedCourse = () => {
     { id: 1, name: "Youtube Channels" },
     { id: 2, name: "Social Media" },
     { id: 3, name: "Skills" }, // Changed "UI/UX Design Principles" to "Skills"
-    { id: 4, name: "Machine Learning Basics" },
+    { id: 4, name: "Blogs & resources" },
   ];
 
   const [activeCourse, setActiveCourse] = useState(1);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="py-4 w-full">
-      <h2 className="xsm:text-[13px] sm:text-sm md:text-xl font-semibold mb-4">
-        Featured Courses
-      </h2>
+    <div className="py-4 w-full my-10">
+      <h2 className="xsm:text-[13px] sm:text-sm md:text-xl font-semibold mb-4"></h2>
 
       {/* Course Selection */}
       <div className="relative w-full border-b-2 border-gray-300">
@@ -59,10 +64,7 @@ const FeaturedCourse = () => {
       ) : activeCourse === 3 ? (
         <SkillsSection />
       ) : (
-        <CourseCards
-          activeCourse={activeCourse}
-          onCardClick={() => setIsModalOpen(true)}
-        />
+        <BlogAndResources />
       )}
 
       {/* Navigation Buttons */}
@@ -171,6 +173,52 @@ const SkillCard = ({ image, text }) => {
     <div className="bg-white shadow-md rounded-xl p-4 flex flex-col items-center text-center">
       <img src={image} alt={text} className="w-16 h-16" />
       <p className="text-gray-700 text-sm mt-2">{text}</p>
+    </div>
+  );
+};
+const BlogAndResources = () => {
+  const resources = [
+    {
+      id: 1,
+      icon: <FaBook size={40} className="text-blue-500" />,
+      name: "Blog 1",
+      description: "Learn the basics of ML.",
+    },
+    {
+      id: 2,
+      icon: <FaChalkboardTeacher size={40} className="text-green-500" />,
+      name: "Resource 1",
+      description: "Top ML books.",
+    },
+    {
+      id: 3,
+      icon: <FaGraduationCap size={40} className="text-purple-500" />,
+      name: "Blog 2",
+      description: "ML algorithms explained.",
+    },
+    {
+      id: 4,
+      icon: <FaLaptopCode size={40} className="text-orange-500" />,
+      name: "Resource 2",
+      description: "Best ML courses.",
+    },
+  ];
+
+  return (
+    <div>
+      <h2 className="text-lg font-semibold mt-6 mb-3">Blog & Resources</h2>
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        {resources.map((resource) => (
+          <div
+            key={resource.id}
+            className="bg-white shadow-md rounded-xl p-4 flex flex-col items-center text-center"
+          >
+            {resource.icon}
+            <h3 className="text-md font-semibold mt-2">{resource.name}</h3>
+            <p className="text-gray-600 text-sm">{resource.description}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
