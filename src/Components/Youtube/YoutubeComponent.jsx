@@ -30,7 +30,7 @@ const youtubeChannels = [
 const YoutubeComponent = () => {
   return (
     <>
-      <h2 className=" text-2xl  font-body uppercase my-4">
+      <h2 className=" sm:text-lg md:text-2xl  font-body uppercase my-4">
         {" "}
         Join Our Youtube Channels
       </h2>
