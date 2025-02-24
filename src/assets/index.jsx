@@ -12,12 +12,14 @@ import person3 from "./Instructor/person3.jpg";
 import ebook from "./Services/ebook.png";
 import shop from "./Services/shop.png";
 import courses from "./Services/courses.png";
-import amharicbanner from "./Logo/memherbanner.jpg";
 import YoutubeIcon from "./Logo/youtubeIcon.png";
 import skill1 from "./Skills/skill1.jpg";
 import skill2 from "./Skills/skill2.jpg";
 import skill3 from "./Skills/skill3.jpg";
 import skill4 from "./Skills/skill4.jpg";
+import amharicbanner from "./Channels/AmharicChannel.jpg";
+import englishbanner from "./Channels/EnglishChannel.jpg";
+import tigrinyabanner from "./Channels/tigreynaChannel.jpg";
 export {
   logo,
   Course1,
@@ -39,4 +41,6 @@ export {
   skill2,
   skill3,
   skill4,
+  englishbanner,
+  tigrinyabanner,
 };

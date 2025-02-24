@@ -8,6 +8,9 @@ import English from "./Pages/English";
 import Amharic from "./Pages/Amharic";
 import Tigrinya from "./Pages/Tigrinya";
 import StandAlone from "./Pages/StandAlone";
+import AmharicChannel from "./Components/Channels/Amharic/AmharicChannel";
+import TigrinyaChannel from "./Components/Channels/Tigrinya/TigrinyaChannel";
+import EnglishChannel from "./Components/Channels/English/EnglishChannel";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +25,9 @@ const router = createBrowserRouter([
   { path: "/english", element: <English /> },
   { path: "/amharic", element: <Amharic /> },
   { path: "/tigrinya", element: <Tigrinya /> },
+  { path: "/englishChannel", element: <EnglishChannel /> },
+  { path: "/amharicChannel", element: <AmharicChannel /> },
+  { path: "/tigrinyaChannel", element: <TigrinyaChannel /> },
 ]);
 
 const App = () => {
