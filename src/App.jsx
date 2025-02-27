@@ -11,7 +11,10 @@ import StandAlone from "./Pages/StandAlone";
 import AmharicChannel from "./Components/Channels/Amharic/AmharicChannel";
 import TigrinyaChannel from "./Components/Channels/Tigrinya/TigrinyaChannel";
 import EnglishChannel from "./Components/Channels/English/EnglishChannel";
-
+import {
+  LanguageProvider,
+  useLanguage,
+} from "/src/Context/LanguageContext.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -31,7 +34,11 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <LanguageProvider>
+      <RouterProvider router={router} />
+    </LanguageProvider>
+  );
 };
 
 export default App;

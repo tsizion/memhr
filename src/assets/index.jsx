@@ -1,4 +1,6 @@
 import logo from "./Logo/memherlogo-removebg-preview.png";
+import logomemeher from "./Logo/logomemher.jpg";
+
 import Course1 from "./Courses/Course1.jpg";
 import Course2 from "./Courses/Course2.jpg";
 import Course3 from "./Courses/Course3.jpg";
@@ -21,6 +23,7 @@ import amharicbanner from "./Channels/AmharicChannel.jpg";
 import englishbanner from "./Channels/EnglishChannel.jpg";
 import tigrinyabanner from "./Channels/tigreynaChannel.jpg";
 export {
+  logomemeher,
   logo,
   Course1,
   Course2,

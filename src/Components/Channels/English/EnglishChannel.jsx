@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { englishbanner, logo } from "../../../assets";
+import { englishbanner, logo, logomemeher } from "../../../assets";
 import Videos from "./Videos";
 import PlayLists from "./PlayLists";
 
@@ -19,7 +19,11 @@ const EnglishChannel = () => {
         />
         {/* Logo */}
         <div className="absolute left-4 bottom-[-30px] xsm:w-20 xsm:h-20 sm:w-24 sm:h-24 md:w-40 md:h-40 bg-white rounded-full border-4 border-white overflow-hidden shadow-lg">
-          <img src={logo} alt="Logo" className="w-full h-full object-cover" />
+          <img
+            src={logomemeher}
+            alt="Logo"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
 
@@ -28,7 +32,11 @@ const EnglishChannel = () => {
         {/* Channel Name Section */}
         <div className="mt-12 flex items-center gap-4 px-12">
           <div className="xsm:w-20 xsm:h-20 sm:w-24 sm:h-24 md:w-30 md:h-30 bg-white rounded-full border-4 border-white overflow-hidden shadow-lg">
-            <img src={logo} alt="Logo" className="w-full h-full object-cover" />
+            <img
+              src={logomemeher}
+              alt="Logo"
+              className="w-full h-full object-cover"
+            />
           </div>
           <div>
             <h1 className="text-2xl font-bold">Memher English</h1>
