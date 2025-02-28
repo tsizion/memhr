@@ -4,8 +4,6 @@ import { YouTubePlaylist } from "@codesweetly/react-youtube-playlist";
 const PlayLists = () => {
   const playlists = [
     { title: "Playlist 1", playlistId: "PL88PvbeqXtDsOPQjB2ENdLQ8fSAqz2GKF" },
-    { title: "Playlist 2", playlistId: "PLJtSh2y4dY8Jlsoq65QpdzxKN6XIftXb7" },
-    { title: "Playlist 3", playlistId: "PLJWJz1FiYHvfAF9yRuhYjJbZi7yRpD9Af" }, // Add more playlists as needed
   ];
 
   const [selectedPlaylist, setSelectedPlaylist] = useState(

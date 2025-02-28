@@ -37,7 +37,7 @@ const YoutubeComponent = () => {
 
   return (
     <>
-      <h2 className="sm:text-lg md:text-2xl font-body uppercase my-4">
+      <h2 className=" xsm:text-xs sm:text-sm md:text-lg font-body uppercase my-4">
         Join Our Youtube Channels
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
@@ -63,10 +63,16 @@ const YoutubeComponent = () => {
             </div>
 
             {/* Info Section */}
-            <div className="p-4 flex-1 flex flex-col justify-between">
-              <h3 className="text-lg font-bold">{channel.name}</h3>
-              <p className="text-gray-600">{channel.subscribers}</p>
-              <p className="text-sm text-gray-500">{channel.description}</p>
+            <div className=" p-4 flex-1 flex flex-col justify-between">
+              <h3 className="xsm:text-xs sm:text-sm md:text-lg font-bold">
+                {channel.name}
+              </h3>
+              <p className="text-gray-600 xsm:text-xs sm:text-sm md:text-lg">
+                {channel.subscribers}
+              </p>
+              <p className="xsm:text-xs sm:text-xs md:text-lg text-sm text-gray-500">
+                {channel.description}
+              </p>
             </div>
           </div>
         ))}

@@ -34,7 +34,7 @@ const FeaturedCourse = () => {
           {courses.map((course) => (
             <h2
               key={course.id}
-              className={`text-[8px] sm:text-[10px] md:text-lg font-medium px-4 py-2 cursor-pointer transition-all duration-300 ${
+              className={`xsm:text-[11px] sm:text-[12px] md:text-lg font-medium px-4 py-2 cursor-pointer transition-all duration-300 ${
                 activeCourse === course.id
                   ? "text-orange-500 font-semibold"
                   : "text-gray-600"
@@ -69,10 +69,10 @@ const FeaturedCourse = () => {
 
       {/* Navigation Buttons */}
       <div className="flex gap-1 my-4">
-        <div className="bg-primary-orange px-4 py-2 rounded-md text-white text-[12px] cursor-pointer">
+        <div className="bg-primary-orange px-4 py-2 rounded-md text-white sm:text-[10px] md:text-[12px] cursor-pointer">
           <FaLessThan />
         </div>
-        <div className="bg-primary-orange px-4 py-2 rounded-md text-white text-[12px] cursor-pointer">
+        <div className="bg-primary-orange px-4 py-2 rounded-md text-white sm:text-[10px] md:text-[12px] cursor-pointer">
           <FaGreaterThan />
         </div>
       </div>
@@ -86,8 +86,10 @@ const FeaturedCourse = () => {
 const SocialMediaSection = () => {
   return (
     <div>
-      <h2 className="text-lg font-semibold mt-6 mb-3">Join Our Social Media</h2>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <h2 className="xsm:text-sm md:text-lg font-semibold mt-6 mb-3">
+        Join Our Social Media
+      </h2>
+      <div className="grid xsm:grid-cols-2 md:grid-cols-4 gap-4">
         <SocialMediaCard
           icon={<FaInstagram size={40} className="text-pink-500" />}
           platform="Instagram"
@@ -121,10 +123,12 @@ const SocialMediaCard = ({ icon, platform, username, followers }) => {
   return (
     <div className="bg-white shadow-md rounded-xl p-4 flex flex-col items-center text-center">
       {icon}
-      <h3 className="text-md font-semibold mt-2">{platform}</h3>
-      <p className="text-gray-600 text-sm">{username}</p>
-      <p className="text-gray-500 text-xs">{followers} Followers</p>
-      <button className="mt-2 bg-blue-500 text-white px-3 py-1 rounded-md text-sm">
+      <h3 className="xsm:text-sm md:text-md font-semibold mt-2">{platform}</h3>
+      <p className="text-gray-600 xsm:text-xs md:text-sm">{username}</p>
+      <p className="text-gray-500 xsm:text-[10px] md:text-xs">
+        {followers} Followers
+      </p>
+      <button className="mt-2 bg-blue-500 text-white px-3 py-1 rounded-md xsm:text-[10px] md:text-sm">
         Follow
       </button>
     </div>
@@ -158,8 +162,10 @@ const SkillsSection = () => {
 
   return (
     <div>
-      <h2 className="text-lg font-semibold mt-6 mb-3">Essential Skills</h2>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <h2 className="xsm:text-sm md:text-lg font-semibold mt-6 mb-3">
+        Essential Skills
+      </h2>
+      <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
         {skills.map((skill) => (
           <SkillCard key={skill.id} image={skill.image} text={skill.text} />
         ))}
@@ -172,7 +178,7 @@ const SkillCard = ({ image, text }) => {
   return (
     <div className="bg-white shadow-md rounded-xl p-4 flex flex-col items-center text-center">
       <img src={image} alt={text} className="w-16 h-16" />
-      <p className="text-gray-700 text-sm mt-2">{text}</p>
+      <p className="text-gray-700 xsm:text-xs md:text-sm mt-2">{text}</p>
     </div>
   );
 };
@@ -180,25 +186,25 @@ const BlogAndResources = () => {
   const resources = [
     {
       id: 1,
-      icon: <FaBook size={40} className="text-blue-500" />,
+      icon: <FaBook size={30} className="text-blue-500" />,
       name: "Blog 1",
       description: "Learn the basics of ML.",
     },
     {
       id: 2,
-      icon: <FaChalkboardTeacher size={40} className="text-green-500" />,
+      icon: <FaChalkboardTeacher size={30} className="text-green-500" />,
       name: "Resource 1",
       description: "Top ML books.",
     },
     {
       id: 3,
-      icon: <FaGraduationCap size={40} className="text-purple-500" />,
+      icon: <FaGraduationCap size={30} className="text-purple-500" />,
       name: "Blog 2",
       description: "ML algorithms explained.",
     },
     {
       id: 4,
-      icon: <FaLaptopCode size={40} className="text-orange-500" />,
+      icon: <FaLaptopCode size={30} className="text-orange-500" />,
       name: "Resource 2",
       description: "Best ML courses.",
     },
@@ -206,16 +212,22 @@ const BlogAndResources = () => {
 
   return (
     <div>
-      <h2 className="text-lg font-semibold mt-6 mb-3">Blog & Resources</h2>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <h2 className="xsm:text-sm md:text-lg font-semibold mt-6 mb-3">
+        Blog & Resources
+      </h2>
+      <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
         {resources.map((resource) => (
           <div
             key={resource.id}
             className="bg-white shadow-md rounded-xl p-4 flex flex-col items-center text-center"
           >
             {resource.icon}
-            <h3 className="text-md font-semibold mt-2">{resource.name}</h3>
-            <p className="text-gray-600 text-sm">{resource.description}</p>
+            <h3 className="xsm:text-sm md:text-md font-semibold mt-2">
+              {resource.name}
+            </h3>
+            <p className="text-gray-600 xsm:text-xs md:text-sm">
+              {resource.description}
+            </p>
           </div>
         ))}
       </div>

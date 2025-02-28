@@ -8,7 +8,7 @@ const TigrinyaChannel = () => {
   const [activeTab, setActiveTab] = useState("Videos");
 
   return (
-    <div className="w-full">
+    <div className="w-full font-body">
       {/* Header Section */}
       <div className="relative w-full h-40 bg-gray-200">
         {/* Banner Image */}

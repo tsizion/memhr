@@ -17,7 +17,6 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
           alt="Logo"
           className="h-20 w-auto object-contain" // Consistent logo size in menu
         />
-        <h1 className="text-lg font-bold text-blue-400 ml-4">YourLogo</h1>
         <AiOutlineClose
           size={24}
           onClick={toggleMenu}
@@ -27,7 +26,7 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
 
       {/* Search Bar */}
       <div className="px-4 py-2 relative">
-        <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+        <FaSearch className="absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-500" />
         <input
           type="text"
           placeholder="Search..."
@@ -48,7 +47,7 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
         </li>
         <li>
           <Link
-            to="/about"
+            to="/"
             onClick={toggleMenu}
             className="block hover:text-blue-400"
           >
@@ -57,7 +56,7 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
         </li>
         <li>
           <Link
-            to="/services"
+            to="/"
             onClick={toggleMenu}
             className="block hover:text-blue-400"
           >
@@ -66,7 +65,7 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
         </li>
         <li>
           <Link
-            to="/blog"
+            to="/"
             onClick={toggleMenu}
             className="block hover:text-blue-400"
           >
@@ -75,7 +74,7 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
         </li>
         <li>
           <Link
-            to="/contact"
+            to="/"
             onClick={toggleMenu}
             className="block hover:text-blue-400"
           >
