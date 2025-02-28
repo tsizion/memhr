@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { logo } from "../assets"; // Assuming logo is stored in your assets folder
+import { logo, logomemeher } from "../assets"; // Assuming logo is stored in your assets folder
 
 const Footer = () => {
   return (
@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="flex flex-col items-start">
             <div className="w-16 h-16 rounded-full overflow-hidden mb-4">
               <img
-                src={logo}
+                src={logomemeher}
                 alt="Logo"
                 className="w-full h-full object-cover"
               />
