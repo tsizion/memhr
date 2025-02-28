@@ -5,7 +5,7 @@ import { logo, logomemeher } from "../assets"; // Assuming logo is stored in you
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 text-gray-700 pt-10 pb-6 mt-10 sm:px-[5rem] md:px-[10rem]">
+    <footer className="bg-gray-100 text-gray-700 pt-10 pb-6 mt-10 ">
       <div className="max-w-7xl mx-auto px-6">
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -34,30 +34,27 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-blue-500 transition">
+                <Link to="/" className="hover:text-blue-500 transition">
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-blue-500 transition">
+                <Link to="/" className="hover:text-blue-500 transition">
                   Services
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/portfolio"
-                  className="hover:text-blue-500 transition"
-                >
+                <Link to="/" className="hover:text-blue-500 transition">
                   Portfolio
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="hover:text-blue-500 transition">
+                <Link to="/" className="hover:text-blue-500 transition">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-blue-500 transition">
+                <Link to="/" className="hover:text-blue-500 transition">
                   Contact
                 </Link>
               </li>
