@@ -8,18 +8,25 @@ const Welcome = () => {
   const translations = {
     en: {
       welcome: "Welcome",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et.",
+      description: `Welcome to Memhr English Channel, your go-to place for learning, growth, and entertainment! 🚀
+
+We create educational and engaging content to help you improve skills, career opportunities, and general knowledge while enjoying fun and inspiring videos. Our content is designed for a global audience, including Ethiopians and the diaspora, looking to learn, grow, and succeed.`,
       teacher: "Teacher",
     },
     am: {
       welcome: "እንኳን ደህና መጡ",
-      description: "ሎረም ኢፕሶም ዶር ሲታ ሶርት ማት ይበልኝ",
+      description: `እንኳን ወደ መምህር የአማርኛ ቻናል በደህና መጡ  የመማር፣ የእድገት እና የመዝናኛ ቦታዎ! 🚀
+
+በኢትዮጵያ እና በዲያስፖራው ለሚገኙ ኢትዮጵያውያን አዝናኝ እና መሳጭ ቪዲዮዎች እያጣጣሙ ክህሎትን፣ ሙያን እና ዕውቀትን ለማሻሻል የሚረዳ ከፍተኛ ጥራት ያለው የአማርኛ ይዘት እንፈጥራለን።
+`,
       teacher: "መምህር",
     },
     ti: {
       welcome: "እንኳን ደህና መጡ",
-      description: "በርሶ አንካ ምስላት በተመነት ማለት ቢዝኮማ አልተለዋዋጭ ተግባራት",
+      description: `🤗 እንዃዕ ናብ መምህር ትግርኛ ቻነል መምሃሪ፣ ዕብየት፣ መዘናግዒ ቦታኹም ብደሓን መጻእኩም! 🚀 
+
+ኣብ ኢትዮጵያን ዲያስፖራን ዝርከቡ ኢትዮጵያውያን ክእለቶም፣ ፍልጠቶም፣ ዓቕሞም ንምምሕያሽ ዝሕግዝ ልዑል ፅሬት ዘለዎ ትሕዝቶ ኣምሓርኛ ንፈጥር እንትኸውን ዘዘናግዑን መሳጢን ቪድዮታት እናቕረብና ኢና። 
+`,
       teacher: "መምህር",
     },
   };
