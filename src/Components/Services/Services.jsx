@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { courses, ebook, shop } from "../../assets";
+import { courses, ebook, shop } from "../../assets/index";
 import ComingSoon from "../ComingSoon"; // Import the ComingSoon component
+import { useLanguage } from "../../Context/LanguageContext"; // Import the useLanguage hook
 
 const ServiceCard = ({ icon, title, description, onGetStarted }) => {
   return (
@@ -20,6 +21,7 @@ const ServiceCard = ({ icon, title, description, onGetStarted }) => {
 
 const Services = () => {
   const [isComingSoonOpen, setIsComingSoonOpen] = useState(false);
+  const { language } = useLanguage(); // Using useLanguage hook to get the current language
 
   const handleGetStartedClick = () => {
     setIsComingSoonOpen(true); // Show the modal when "Get Started" is clicked
@@ -29,28 +31,70 @@ const Services = () => {
     setIsComingSoonOpen(false); // Close the modal when the close button is clicked
   };
 
+  // Language-specific content
+  const serviceTitles = {
+    en: {
+      ebook: "Buy e-book",
+      course: "Buy Course",
+      product: "Buy products",
+    },
+    am: {
+      ebook: "መጽሐፍ ኢቶክ ግዛት",
+      course: "መምህራን ግዛት",
+      product: "ምርቶች ግዛት",
+    },
+    tg: {
+      ebook: "ኤብኮት ግዛት",
+      course: "መምህራን ግዛት",
+      product: "ምርቶች ግዛት",
+    },
+  };
+
+  const serviceDescriptions = {
+    en: {
+      ebook:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      course:
+        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      product:
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
+    am: {
+      ebook: "እባክህ እተኛ በመሆኑ በእተኛ እንደ ገና ቀንሳ በቀርበት ማቅረብ።",
+      course: "ይህንን መምህራን እተኛ በመሆኑ ማቅረብ።",
+      product: "ምርቶች ግዛት በገበሬ ባለኝ በመሆኑ ማቅረብ።",
+    },
+    tg: {
+      ebook: "ስለታወቀችሁ እባክህ እተኛ በመሆኑ ማቅረብ።",
+      course: "ምርቶች ግዛት በመሆኑ ማቅረብ።",
+      product: "ምርቶች ግዛት በምንጭ ማቅረብ።",
+    },
+  };
+
   return (
     <div className="flex flex-col items-center justify-center p-8 bg-white">
       <h2 className="text-2xl font-bold mb-9 text-center font-title text-primary">
-        What can you find on Memeher?
+        {language === "en" && "What can you find on Memeher?"}
+        {language === "am" && "ምን ነገር በምስለኝ ማሳያ ላይ?"}
+        {language === "tg" && "ምን ትግርኛ ማሳያ አላቸው?"}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full h-auto max-w-5xl">
         <ServiceCard
           icon={ebook}
-          title="Buy e-book"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          title={serviceTitles[language].ebook}
+          description={serviceDescriptions[language].ebook}
           onGetStarted={handleGetStartedClick}
         />
         <ServiceCard
           icon={courses}
-          title="Buy Course"
-          description="Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          title={serviceTitles[language].course}
+          description={serviceDescriptions[language].course}
           onGetStarted={handleGetStartedClick}
         />
         <ServiceCard
           icon={shop}
-          title="Buy products"
-          description="Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          title={serviceTitles[language].product}
+          description={serviceDescriptions[language].product}
           onGetStarted={handleGetStartedClick}
         />
       </div>

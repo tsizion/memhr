@@ -4,12 +4,14 @@ import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { logo } from "../assets";
 import MobileMenu from "./MobileMenu";
+import { useLanguage } from "../Context/LanguageContext";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
+  const { language } = useLanguage();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -28,9 +30,42 @@ const Header = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const translations = {
+    en: {
+      courses: "Courses",
+      playlists: "Playlists",
+      about: "About",
+      adult: "Adult",
+      kid: "Kid",
+      signIn: "Sign In",
+      joinSocial: "Join Our Social Media",
+      searchPlaceholder: "Search....",
+    },
+    am: {
+      courses: "ኮርሶች",
+      playlists: "ፕሌይስሶች",
+      about: "ስለ",
+      adult: "ሐምላ",
+      kid: "ሕፃን",
+      signIn: "ግባ",
+      joinSocial: "ከማህበረሰባችን ሚዲያ ጋር ተያይዞ ይተላለፉ",
+      searchPlaceholder: "ፈልግ....",
+    },
+    ti: {
+      courses: "ኮርሶች",
+      playlists: "ፕሌይስሶች",
+      about: "ስለ",
+      adult: "ሐምላ",
+      kid: "ሕፃን",
+      signIn: "ግባ",
+      joinSocial: "ከማህበረሰባችን ሚዲያ ጋር ተያይዞ ይተላለፉ",
+      searchPlaceholder: "ፈልግ....",
+    },
+  };
+
   return (
     <header
-      className={` header text-sm font-title sticky top-0 z-20 w-full flex flex-row items-center justify-between px-6 py-3 ${
+      className={`header text-sm font-title sticky top-0 z-20 w-full flex flex-row items-center justify-between px-6 py-3 ${
         isScrolled ? "" : ""
       } transition-shadow`}
     >
@@ -51,7 +86,7 @@ const Header = () => {
             <FaSearch className="absolute left-8 text-gray-500" />
             <input
               type="text"
-              placeholder="Search...."
+              placeholder={translations[language].searchPlaceholder}
               className="mx-3 bg-white sm:w-56 md:w-44 lg:w-96 pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-primary-dark transition-width"
             />
           </div>
@@ -60,16 +95,16 @@ const Header = () => {
         {/* Navigation Links */}
         <nav className="hidden md:flex items-center gap-8 ml-6">
           <Link to="/" className="text-gray-700 hover:text-blue-500 transition">
-            Courses
+            {translations[language].courses}
           </Link>
           <Link
             to="/english"
             className="text-gray-700 hover:text-blue-500 transition"
           >
-            Playlists
+            {translations[language].playlists}
           </Link>
           <Link to="/" className="text-gray-700 hover:text-blue-500 transition">
-            About
+            {translations[language].about}
           </Link>
 
           {/* Dropdown for Adult */}
@@ -79,7 +114,8 @@ const Header = () => {
             onMouseLeave={() => setIsDropdownOpen(false)}
           >
             <button className="flex items-center text-gray-700 hover:text-blue-500 transition">
-              Adult <AiOutlineDown className="ml-1 w-6" />
+              {translations[language].adult}{" "}
+              <AiOutlineDown className="ml-1 w-6" />
             </button>
             {isDropdownOpen && (
               <div className="absolute top-full mt-2 bg-white shadow-lg rounded-lg py-2 w-40 z-10">
@@ -87,13 +123,13 @@ const Header = () => {
                   to="/"
                   className="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-500 transition"
                 >
-                  Kid
+                  {translations[language].kid}
                 </Link>
                 <Link
                   to="/"
                   className="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-500 transition"
                 >
-                  Adult
+                  {translations[language].adult}
                 </Link>
               </div>
             )}
@@ -136,7 +172,7 @@ const Header = () => {
             className="text-gray-700 hover:text-blue-500 transition"
           >
             <button className="bg-primary px-3 py-2 rounded-[5px] text-white hover:bg-primary-light">
-              SignIn
+              {translations[language].signIn}
             </button>
           </Link>
         </nav>

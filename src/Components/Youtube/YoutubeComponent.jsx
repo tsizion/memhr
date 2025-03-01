@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { amharicbanner, YoutubeIcon } from "../../assets";
+import { useLanguage } from "../../Context/LanguageContext";
 
 const youtubeChannels = [
   {
@@ -34,11 +35,24 @@ const youtubeChannels = [
 
 const YoutubeComponent = () => {
   const navigate = useNavigate();
+  const { language } = useLanguage();
+
+  const translations = {
+    en: {
+      title: "Join Our Youtube Channels",
+    },
+    am: {
+      title: "ወደ እኛ የቻናል ዩቱብ ቻናሎች ተሳትፉ",
+    },
+    ti: {
+      title: "ወደ እኛ የቻናል ዩቱብ ቻናሎች ተሳትፉ",
+    },
+  };
 
   return (
     <>
-      <h2 className=" xsm:text-xs sm:text-sm md:text-lg font-body uppercase my-4">
-        Join Our Youtube Channels
+      <h2 className="xsm:text-xs sm:text-sm md:text-lg font-body uppercase my-4">
+        {translations[language].title}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
         {youtubeChannels.map((channel) => (
@@ -47,7 +61,6 @@ const YoutubeComponent = () => {
             onClick={() => navigate(channel.path)}
             className="relative flex flex-col bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition cursor-pointer"
           >
-            {/* Image Section */}
             <div className="relative h-40">
               <img
                 src={channel.cover}
@@ -61,9 +74,7 @@ const YoutubeComponent = () => {
                 </div>
               </div>
             </div>
-
-            {/* Info Section */}
-            <div className=" p-4 flex-1 flex flex-col justify-between">
+            <div className="p-4 flex-1 flex flex-col justify-between">
               <h3 className="xsm:text-xs sm:text-sm md:text-lg font-bold">
                 {channel.name}
               </h3>
