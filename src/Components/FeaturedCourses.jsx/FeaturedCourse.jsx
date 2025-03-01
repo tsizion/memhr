@@ -46,7 +46,7 @@ const FeaturedCourse = () => {
       courses: [
         { id: 1, name: "ዩቱብ ቻነል" },
         { id: 2, name: "ማህበረሰብ ሚዲያ" },
-        { id: 3, name: "ክህሎቶች" },
+        { id: 3, name: "ክህሎች" },
         { id: 4, name: "ብሎጎች እና ምርጥ ምንጮች" },
       ],
       courseSelection: "ትምህርት ምርጫ",
@@ -193,7 +193,7 @@ const SkillsSection = () => {
   const translations = {
     en: { essentialSkills: "Essential Skills" },
     am: { essentialSkills: "አስፈላጊ ክህሎቶች" },
-    ti: { essentialSkills: "አስፈላጊ ክህሎቶች" },
+    ti: { essentialSkills: "አስፈላጊ ክህሎች" },
   };
 
   const skills = [

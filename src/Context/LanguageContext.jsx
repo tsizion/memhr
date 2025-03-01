@@ -1,14 +1,14 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useContext, useState } from "react";
 
-// Create the context
+// Create a context
 const LanguageContext = createContext();
 
-// LanguageProvider component to wrap your app and provide the context
+// Create a provider component
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState("en"); // Default language is English
 
   const changeLanguage = (lang) => {
-    setLanguage(lang); // Function to change the language
+    setLanguage(lang);
   };
 
   return (
@@ -18,7 +18,7 @@ export const LanguageProvider = ({ children }) => {
   );
 };
 
-// Custom hook to use the language context
+// Custom hook to use language context
 export const useLanguage = () => {
   return useContext(LanguageContext);
 };
