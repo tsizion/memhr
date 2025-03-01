@@ -2,8 +2,68 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { logo, logomemeher } from "../assets"; // Assuming logo is stored in your assets folder
+import { useLanguage } from "../Context/LanguageContext"; // Import the useLanguage hook
 
 const Footer = () => {
+  const { language = "en" } = useLanguage(); // Ensure language is defined
+
+  const footerContent = {
+    en: {
+      aboutus:
+        "Empowering you with the tools you need to succeed in a digital world. Explore our services, portfolio, and blog for insights.",
+      quickLinks: "Quick Links",
+      home: "Home",
+      about: "About",
+      services: "Services",
+      portfolio: "Portfolio",
+      blog: "Blog",
+      contact: "Contact",
+      contactUs: "Contact Us",
+      email: "Email:",
+      phone: "Phone:",
+      address: "Address:",
+      socialMedia: "Social Media Links",
+      copyright: "© Your Company. All rights reserved.",
+    },
+    am: {
+      aboutus:
+        "እርስዎን በዲጂታል ዓለም በማሳተም ስለማሻሻል መሣሪያዎች እንደምትጠቀሙ ተለመዱ። አገልግሎቶቻችንን፣ ፖርትፎልዮቻችንን፣ እና ብሎግ እንዲተመን ስለምትነበት።",
+      quickLinks: "አሳሽ አማራጮች",
+      home: "መነሻ",
+      about: "ስለእኛ",
+      services: "አገልግሎቶች",
+      portfolio: "ፖርትፎልዮ",
+      blog: "ብሎግ",
+      contact: "እንግዶች",
+      contactUs: "እንግዶች",
+      email: "ኢሜይል:",
+      phone: "ስልክ:",
+      address: "አድራሻ:",
+      socialMedia: "ማህበረሰብ መሳሪያዎች",
+      copyright: "© እኛ ኩባንያ። በሁሉም መብት ተመስርቶች ነው።",
+    },
+    ti: {
+      aboutus:
+        "እባክህን ስለዚህ በዲጂታል ዓለም በማሳተም መሣሪያዎች እንደምትጠቀሙ ተለመዱ። አገልግሎቶቻችንን፣ ፖርትፎልዮቻችንን፣ እና ብሎግ ስለምትሰጥ።",
+      quickLinks: "አሳሽ አማራጮች",
+      home: "መነሻ",
+      about: "ስለእኛ",
+      services: "አገልግሎቶች",
+      portfolio: "ፖርትፎልዮ",
+      blog: "ብሎግ",
+      contact: "እንግዶች",
+      contactUs: "እንግዶች",
+      email: "ኢሜይል:",
+      phone: "ስልክ:",
+      address: "አድራሻ:",
+      socialMedia: "ማህበረሰብ መሳሪያዎች",
+      copyright: "© በእኛ ኩባንያ። በሁሉም መብት ተመስርቶች ነው።",
+    },
+  };
+
+  // Safely access footer content for the current language
+  const currentContent = footerContent[language] || footerContent["en"];
+
   return (
     <footer className="bg-gray-100 text-gray-700 pt-10 pb-6 mt-10 ">
       <div className="max-w-7xl mx-auto px-6">
@@ -18,44 +78,43 @@ const Footer = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <p className="text-sm">
-              Empowering you with the tools you need to succeed in a digital
-              world. Explore our services, portfolio, and blog for insights.
-            </p>
+            <p className="text-sm">{currentContent.aboutus}</p>
           </div>
 
           {/* Column 2: Navigation */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-semibold text-lg mb-4">
+              {currentContent.quickLinks}
+            </h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link to="/" className="hover:text-blue-500 transition">
-                  Home
+                  {currentContent.home}
                 </Link>
               </li>
               <li>
                 <Link to="/" className="hover:text-blue-500 transition">
-                  About
+                  {currentContent.about}
                 </Link>
               </li>
               <li>
                 <Link to="/" className="hover:text-blue-500 transition">
-                  Services
+                  {currentContent.services}
                 </Link>
               </li>
               <li>
                 <Link to="/" className="hover:text-blue-500 transition">
-                  Portfolio
+                  {currentContent.portfolio}
                 </Link>
               </li>
               <li>
                 <Link to="/" className="hover:text-blue-500 transition">
-                  Blog
+                  {currentContent.blog}
                 </Link>
               </li>
               <li>
                 <Link to="/" className="hover:text-blue-500 transition">
-                  Contact
+                  {currentContent.contact}
                 </Link>
               </li>
             </ul>
@@ -63,10 +122,12 @@ const Footer = () => {
 
           {/* Column 3: Contact Info */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
+            <h3 className="font-semibold text-lg mb-4">
+              {currentContent.contactUs}
+            </h3>
             <ul className="text-sm space-y-2">
               <li>
-                <span className="font-bold">Email:</span>{" "}
+                <span className="font-bold">{currentContent.email}</span>{" "}
                 <a
                   href="mailto:info@example.com"
                   className="hover:text-blue-500 transition"
@@ -75,7 +136,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <span className="font-bold">Phone:</span>{" "}
+                <span className="font-bold">{currentContent.phone}</span>{" "}
                 <a
                   href="tel:+123456789"
                   className="hover:text-blue-500 transition"
@@ -84,8 +145,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <span className="font-bold">Address:</span> 123 Main Street,
-                City, Country
+                <span className="font-bold">{currentContent.address}</span> 123
+                Main Street, City, Country
               </li>
             </ul>
           </div>
@@ -131,7 +192,7 @@ const Footer = () => {
 
           {/* Copyright Info */}
           <p className="text-sm text-center mt-4 md:mt-0">
-            © {new Date().getFullYear()} Your Company. All rights reserved.
+            {currentContent.copyright}
           </p>
         </div>
       </div>
