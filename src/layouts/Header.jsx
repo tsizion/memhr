@@ -167,10 +167,7 @@ const Header = () => {
             )}
           </div>
 
-          <Link
-            to="/SignIn"
-            className="text-gray-700 hover:text-blue-500 transition"
-          >
+          <Link to="/" className="text-gray-700 hover:text-blue-500 transition">
             <button className="bg-primary px-3 py-2 rounded-[5px] text-white hover:bg-primary-light">
               {translations[language].signIn}
             </button>
