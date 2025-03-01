@@ -1,6 +1,5 @@
 import React from "react";
 import Welcome from "./Welcome";
-import LanguageCardsContainer from "./LanguageCard";
 import LanguageCirclesContainer from "./LanguageCard";
 
 const Intro = () => {
@@ -9,7 +8,7 @@ const Intro = () => {
       <div className="w-1/2 text-white text-xl font-bold">
         <Welcome />
       </div>
-      <div className="w-1/2  md:mt-14 flex items-start justify-center text-white   font-bold">
+      <div className="w-1/2 md:mt-14 flex items-start justify-center text-white font-bold">
         <LanguageCirclesContainer />
       </div>
     </div>

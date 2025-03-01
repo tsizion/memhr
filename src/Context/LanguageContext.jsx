@@ -1,20 +1,14 @@
 import React, { createContext, useState, useContext } from "react";
-import i18n from "../Translations/il8n"; // Import i18n configuration
 
-// Create Context
+// Create the context
 const LanguageContext = createContext();
 
-// Custom Hook for easy access
-export const useLanguage = () => useContext(LanguageContext);
-
-// Provider Component
+// LanguageProvider component to wrap your app and provide the context
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState("english"); // Default language
+  const [language, setLanguage] = useState("en"); // Default language is English
 
-  // Function to change language
   const changeLanguage = (lang) => {
-    setLanguage(lang);
-    i18n.changeLanguage(lang); // Update i18next language
+    setLanguage(lang); // Function to change the language
   };
 
   return (
@@ -22,4 +16,9 @@ export const LanguageProvider = ({ children }) => {
       {children}
     </LanguageContext.Provider>
   );
+};
+
+// Custom hook to use the language context
+export const useLanguage = () => {
+  return useContext(LanguageContext);
 };
