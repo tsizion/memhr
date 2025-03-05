@@ -37,7 +37,7 @@ const FeaturedCourse = () => {
         { id: 3, name: "ክህሎቶች" },
         { id: 4, name: "ብሎጎች እና ምርጥ ምንጮች" },
       ],
-      courseSelection: "ትምህርት ምርጫ",
+      courseSelection: "የኮርስ ምርጫ",
       joinSocial: "የእኛን ማህበራዊ ሚዲያ ይቀላቀሉ",
       essentialSkills: "አስፈላጊ ክህሎቶች",
       blogResources: "ብሎጎች እና ምርጥ ምንጮች",

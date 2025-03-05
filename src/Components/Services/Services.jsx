@@ -39,14 +39,14 @@ const Services = () => {
       product: "Buy products",
     },
     am: {
-      ebook: "መጽሐፍ ኢቶክ ግዛት",
-      course: "መምህራን ግዛት",
-      product: "ምርቶች ግዛት",
+      ebook: "ኢ-መጽሐፍ ይግዙ",
+      course: "ኮርስ ይግዙ",
+      product: "ምርቶችን ይግዙ",
     },
     ti: {
-      ebook: "ኤብኮት ግዛት",
-      course: "መምህራን ግዛት",
-      product: "ምርቶች ግዛት",
+      ebook: "ኢ-መጽሓፍ ግዝኡ",
+      course: "ኮርስ ዕድጊ",
+      product: "ፍርያት ምግዛእ",
     },
   };
 
@@ -60,14 +60,20 @@ const Services = () => {
         "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     am: {
-      ebook: "እባክህ እተኛ በመሆኑ በእተኛ እንደ ገና ቀንሳ በቀርበት ማቅረብ።",
-      course: "ይህንን መምህራን እተኛ በመሆኑ ማቅረብ።",
-      product: "ምርቶች ግዛት በገበሬ ባለኝ በመሆኑ ማቅረብ።",
+      ebook:
+        "ሎሬም ኢፕሰም ዶሎር ሲት አሜት፣ ኮንሰክተቱር አድፒሲንግ ኤሊት። ሴድ ዶ ኢዩዝሞድ ቴምፖር ኢንሲዲዱንት ኡት ላቦሬ ኤት ዶሎሬ ማግና አሊኩዋ።",
+      course:
+        "ሎሬም ኢፕሰም ዶሎር ሲት አሜት፣ ኮንሰክተቱር አድፒሲንግ ኤሊት። ሴድ ዶ ኢዩዝሞድ ቴምፖር ኢንሲዲዱንት ኡት ላቦሬ ኤት ዶሎሬ ማግና አሊኩዋ።",
+      product:
+        "ሎሬም ኢፕሰም ዶሎር ሲት አሜት፣ ኮንሰክተቱር አድፒሲንግ ኤሊት። ሴድ ዶ ኢዩዝሞድ ቴምፖር ኢንሲዲዱንት ኡት ላቦሬ ኤት ዶሎሬ ማግና አሊኩዋ።",
     },
     ti: {
-      ebook: "ስለታወቀችሁ እባክህ እተኛ በመሆኑ ማቅረብ።",
-      course: "ምርቶች ግዛት በመሆኑ ማቅረብ።",
-      product: "ምርቶች ግዛት በምንጭ ማቅረብ።",
+      ebook:
+        "ሎሬም ኢፕሰም ዶሎር ሲት አሜት፣ ኮንሰክተቱር አድፒሲንግ ኤሊት። ሴድ ዶ ኢዩዝሞድ ቴምፖር ኢንሲዲዱንት ኡት ላቦሬ ኤት ዶሎሬ ማግና አሊኩዋ።",
+      course:
+        "ሎሬም ኢፕሰም ዶሎር ሲት አሜት፣ ኮንሰክተቱር አድፒሲንግ ኤሊት። ሴድ ዶ ኢዩዝሞድ ቴምፖር ኢንሲዲዱንት ኡት ላቦሬ ኤት ዶሎሬ ማግና አሊኩዋ።",
+      product:
+        "ሎሬም ኢፕሰም ዶሎር ሲት አሜት፣ ኮንሰክተቱር አድፒሲንግ ኤሊት። ሴድ ዶ ኢዩዝሞድ ቴምፖር ኢንሲዲዱንት ኡት ላቦሬ ኤት ዶሎሬ ማግና አሊኩዋ።",
     },
   };
 
@@ -79,9 +85,9 @@ const Services = () => {
   return (
     <div className="flex flex-col items-center justify-center p-8 bg-white">
       <h2 className="text-2xl font-bold mb-9 text-center font-title text-primary">
-        {language === "en" && "What can you find on Memeher?"}
-        {language === "am" && "ምን ነገር በምስለኝ ማሳያ ላይ?"}
-        {language === "ti" && "ምን ትግርኛ ማሳያ አላቸው?"}
+        {language === "en" && "What can you find on Memher?"}
+        {language === "am" && "Memher ላይ ምን ማግኘት ይችላሉ?"}
+        {language === "ti" && "ኣብ መመሄር እንታይ ክትረኽቡ ትኽእሉ?"}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full h-auto max-w-5xl">
         <ServiceCard

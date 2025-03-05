@@ -9,8 +9,7 @@ const Footer = () => {
 
   const footerContent = {
     en: {
-      aboutus:
-        "Empowering you with the tools you need to succeed in a digital world. Explore our services, portfolio, and blog for insights.",
+      aboutus: " Your go-to place for learning, growth, and entertainment! 🚀",
       quickLinks: "Quick Links",
       home: "Home",
       about: "About",
@@ -23,41 +22,39 @@ const Footer = () => {
       phone: "Phone:",
       address: "Address:",
       socialMedia: "Social Media Links",
-      copyright: "© Your Company. All rights reserved.",
+      copyright: "© Memhr. All rights reserved.",
     },
     am: {
-      aboutus:
-        "እርስዎን በዲጂታል ዓለም በማሳተም ስለማሻሻል መሣሪያዎች እንደምትጠቀሙ ተለመዱ። አገልግሎቶቻችንን፣ ፖርትፎልዮቻችንን፣ እና ብሎግ እንዲተመን ስለምትነበት።",
-      quickLinks: "አሳሽ አማራጮች",
+      aboutus: "ለመማር፣ ለማደግ እና ለመዝናኛ ትክክለኛ ትክክለኛ ቦታዎ! 🚀",
+      quickLinks: "ፈጣን ማገናኛዎች",
       home: "መነሻ",
       about: "ስለእኛ",
       services: "አገልግሎቶች",
       portfolio: "ፖርትፎልዮ",
       blog: "ብሎግ",
-      contact: "እንግዶች",
-      contactUs: "እንግዶች",
+      contact: "ያግኙን",
+      contactUs: "ያግኙን",
       email: "ኢሜይል:",
       phone: "ስልክ:",
       address: "አድራሻ:",
-      socialMedia: "ማህበረሰብ መሳሪያዎች",
-      copyright: "© እኛ ኩባንያ። በሁሉም መብት ተመስርቶች ነው።",
+      socialMedia: "ማህበራዊ ሚዲያ",
+      copyright: "© መምህር ሁሉም መብቶች የተጠበቁ ናቸው።",
     },
     ti: {
-      aboutus:
-        "እባክህን ስለዚህ በዲጂታል ዓለም በማሳተም መሣሪያዎች እንደምትጠቀሙ ተለመዱ። አገልግሎቶቻችንን፣ ፖርትፎልዮቻችንን፣ እና ብሎግ ስለምትሰጥ።",
+      aboutus: "ንመምሃሪ፣ ንዕብየትን ንመዘናግዕን እትኸዶ ቦታ! 🚀",
       quickLinks: "አሳሽ አማራጮች",
       home: "መነሻ",
       about: "ስለእኛ",
       services: "አገልግሎቶች",
       portfolio: "ፖርትፎልዮ",
       blog: "ብሎግ",
-      contact: "እንግዶች",
-      contactUs: "እንግዶች",
-      email: "ኢሜይል:",
-      phone: "ስልክ:",
+      contact: "ርኸቡና",
+      contactUs: "ርኸቡና",
+      email: "ኢሜይል",
+      phone: "ስልክ",
       address: "አድራሻ:",
-      socialMedia: "ማህበረሰብ መሳሪያዎች",
-      copyright: "© በእኛ ኩባንያ። በሁሉም መብት ተመስርቶች ነው።",
+      socialMedia: "ማሕበራዊ መራኸቢታት",
+      copyright: "© መምህር ሁሉም መብቶች የተጠበቁ ናቸው።",
     },
   };
 
@@ -102,11 +99,7 @@ const Footer = () => {
                   {currentContent.services}
                 </Link>
               </li>
-              <li>
-                <Link to="/" className="hover:text-blue-500 transition">
-                  {currentContent.portfolio}
-                </Link>
-              </li>
+
               <li>
                 <Link to="/" className="hover:text-blue-500 transition">
                   {currentContent.blog}
