@@ -33,26 +33,26 @@ const FeaturedCourse = () => {
     am: {
       courses: [
         { id: 1, name: "ዩቱብ ቻነል" },
-        { id: 2, name: "ማህበረሰብ ሚዲያ" },
+        { id: 2, name: "ማሕበራዊ ሚድያ" },
         { id: 3, name: "ክህሎቶች" },
         { id: 4, name: "ብሎጎች እና ምርጥ ምንጮች" },
       ],
       courseSelection: "ትምህርት ምርጫ",
-      joinSocial: "ከማህበረሰባችን ሚዲያ ጋር ተያይዞ ይተላለፉ",
+      joinSocial: "የእኛን ማህበራዊ ሚዲያ ይቀላቀሉ",
       essentialSkills: "አስፈላጊ ክህሎቶች",
       blogResources: "ብሎጎች እና ምርጥ ምንጮች",
     },
     ti: {
       courses: [
-        { id: 1, name: "ዩቱብ ቻነል" },
-        { id: 2, name: "ማህበረሰብ ሚዲያ" },
-        { id: 3, name: "ክህሎች" },
-        { id: 4, name: "ብሎጎች እና ምርጥ ምንጮች" },
+        { id: 1, name: "ናይ ዩቱብ ቻነላት" },
+        { id: 2, name: "ማሕበራዊ ሚድያ" },
+        { id: 3, name: "ክእለት" },
+        { id: 4, name: "ብሎግን ጸጋታትን" },
       ],
-      courseSelection: "ትምህርት ምርጫ",
-      joinSocial: "ከማህበረሰባችን ሚዲያ ጋር ተያይዞ ይተላለፉ",
-      essentialSkills: "አስፈላጊ ክህሎቶች",
-      blogResources: "ብሎጎች እና ምርጥ ምንጮች",
+      courseSelection: "ምምራጽ ኮርስ",
+      joinSocial: "ኣብ ማሕበራዊ መራኸቢታትና ተጸንበሩ",
+      essentialSkills: "ኣገደስቲ ክእለታት",
+      blogResources: "ብሎግን ጸጋታትን",
     },
   };
 
@@ -122,8 +122,8 @@ const SocialMediaSection = () => {
 
   const translations = {
     en: { joinSocial: "Join Our Social Media", follow: "Follow" },
-    am: { joinSocial: "ከማህበረሰባችን ሚዲያ ጋር ተያይዞ ይተላለፉ", follow: "ተከተል" },
-    ti: { joinSocial: "ከማህበረሰባችን ሚዲያ ጋር ተያይዞ ይተላለፉ", follow: "ተከተል" },
+    am: { joinSocial: "የእኛን ማህበራዊ ሚዲያ ይቀላቀሉ  ", follow: "ይከተሉን።" },
+    ti: { joinSocial: "ኣብ ማሕበራዊ ሚድያና ተጸንበሩ", follow: "ተኸታተሉና" },
   };
 
   return (
@@ -193,7 +193,7 @@ const SkillsSection = () => {
   const translations = {
     en: { essentialSkills: "Essential Skills" },
     am: { essentialSkills: "አስፈላጊ ክህሎቶች" },
-    ti: { essentialSkills: "አስፈላጊ ክህሎች" },
+    ti: { essentialSkills: "ኣገደስቲ ክእለታት" },
   };
 
   const skills = [
@@ -269,28 +269,28 @@ const BlogAndResources = () => {
     en: {
       blogResources: "Blog & Resources",
       resources: [
-        { name: "Blog 1", description: "Learn the basics of ML." },
-        { name: "Resource 1", description: "Top ML books." },
-        { name: "Blog 2", description: "ML algorithms explained." },
-        { name: "Resource 2", description: "Best ML courses." },
+        { name: "Blog 1", description: "Learn the basics of Computer" },
+        { name: "Resource 1", description: "Top Computer books." },
+        { name: "Blog 2", description: "Coding explained." },
+        { name: "Resource 2", description: "Best Coding courses" },
       ],
     },
     am: {
       blogResources: "ብሎጎች እና ምርጥ ምንጮች",
       resources: [
-        { name: "ብሎግ 1", description: "ስለ ML መሠረታዊ ተማሪነት" },
-        { name: "ምንጮች 1", description: "ምርጥ ML መጽሐፍት" },
-        { name: "ብሎግ 2", description: "ML አልጎሪተሞች ተረት" },
-        { name: "ምንጮች 2", description: "ምርጥ ML ትምህርቶች" },
+        { name: "ብሎግ 1", description: "የኮምፒውተርን መሰረታዊ ነገሮች ተማር" },
+        { name: "ምንጮች 1", description: "ምርጥ የኮምፒውተር መጽሐፍት" },
+        { name: "ብሎግ 2", description: "ኮድ ተብራርቷል." },
+        { name: "ምንጮች 2", description: "ምርጥ የኮድ አሰጣጥ ኮርሶች" },
       ],
     },
     ti: {
-      blogResources: "ብሎጎች እና ምርጥ ምንጮች",
+      blogResources: "ብሎግን ጸጋታትን",
       resources: [
-        { name: "ብሎግ 1", description: "ስለ ML መሠረታዊ ተማሪነት" },
-        { name: "ምንጮች 1", description: "ምርጥ ML መጽሐፍት" },
-        { name: "ብሎግ 2", description: "ML አልጎሪተሞች ተረት" },
-        { name: "ምንጮች 2", description: "ምርጥ ML ትምህርቶች" },
+        { name: "ብሎግ 1", description: "መሰረታዊ ትምህርቲ ኮምፒተር ተማሃሩ" },
+        { name: "ጸጋ 1", description: "ላዕለዎት መጻሕፍቲ ኮምፒተር።" },
+        { name: "ብሎግ 2", description: "ኮዲንግ ተገሊጹ" },
+        { name: "ጸጋ  2", description: "ብሉጻት ኮርሳት ኮዲንግ።" },
       ],
     },
   };

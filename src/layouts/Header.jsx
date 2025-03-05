@@ -43,20 +43,20 @@ const Header = () => {
     },
     am: {
       courses: "ኮርሶች",
-      playlists: "ፕሌይስሶች",
-      about: "ስለ",
-      adult: "ሐምላ",
-      kid: "ሕፃን",
+      playlists: "ፕሌይሊስቶች",
+      about: "ስለእኛ",
+      adult: "ለአዋቂ",
+      kid: "ለልጅ",
       signIn: "ግባ",
       joinSocial: "ከማህበረሰባችን ሚዲያ ጋር ተያይዞ ይተላለፉ",
       searchPlaceholder: "ፈልግ....",
     },
     ti: {
-      courses: "ኮርሶች",
-      playlists: "ፕሌይስሶች",
-      about: "ስለ",
-      adult: "ሐምላ",
-      kid: "ሕፃን",
+      courses: "ኮርሳት",
+      playlists: "ፕሌይሊስቶች",
+      about: "ብዛዕባና ዝምልከት",
+      adult: "ንዓቢ ሰብ",
+      kid: "ህፃውንቲ",
       signIn: "ግባ",
       joinSocial: "ከማህበረሰባችን ሚዲያ ጋር ተያይዞ ይተላለፉ",
       searchPlaceholder: "ፈልግ....",
@@ -136,7 +136,7 @@ const Header = () => {
           </div>
 
           {/* Language Dropdown */}
-          <div className="relative">
+          {/* <div className="relative">
             <button
               onClick={toggleLanguageDropdown}
               className="flex items-center text-gray-700 hover:text-blue-500 transition"
@@ -165,10 +165,10 @@ const Header = () => {
                 </Link>
               </div>
             )}
-          </div>
+          </div> */}
 
           <Link to="/" className="text-gray-700 hover:text-blue-500 transition">
-            <button className="bg-primary px-3 py-2 rounded-[5px] text-white hover:bg-primary-light">
+            <button className="w-[100px] bg-primary px-3 py-2 rounded-[5px]  text-white hover:bg-primary-light">
               {translations[language].signIn}
             </button>
           </Link>

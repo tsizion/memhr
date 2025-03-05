@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { logomemeher, logo } from "../../../assets"; // Make sure to update the banner for Tigrinya
+import { logomemeher, logo, tigrinyabanner } from "../../../assets"; // Make sure to update the banner for Tigrinya
 import Videos from "./Videos";
 import PlayLists from "./PlayLists";
 
@@ -50,19 +50,20 @@ const TigrinyaChannel = () => {
         {/* Channel Description */}
         <div className="px-3 mt-2">
           <p className="max-w-[600px]">
-            🤗 ይህ ቻናል ትግርኛን በተለይ በመምህራን እንዲቻሉ እና በሚስተር ባህሪ በመጠቀም የትግርኛ ችግኝት
-            በተሞላባት ትምህርት ያበረታታል። {/* Description translated */}
+            🤗 እዛ ቻነል ክትመሃሩን ከተመሓይሹን ዝሕግዙ... ክእለት ኣምሓርኛ ብዘዘናግዕን መሳጥን ትሕዝቶ።
+            {/* Description translated */}
           </p>
           <button
             onClick={() => setIsModalOpen(true)}
             className="mt-2 text-blue-600 font-medium underline"
           >
-            ተጨማሪ እንዲሆን {/* 'More' translated */}
+            ንዝያዳ ሓበሬታ
+            {/* 'More' translated */}
           </button>
         </div>
         <div className="px-3 mt-2">
           <button className="w-full bg-black text-white py-3 rounded-2xl my-4">
-            ተከታታይ {/* 'Subscribe' translated */}
+            ሳብስክራይብ ግበሩ{/* 'Subscribe' translated */}
           </button>
         </div>
       </div>
@@ -78,7 +79,7 @@ const TigrinyaChannel = () => {
             }`}
             onClick={() => setActiveTab("Videos")}
           >
-            ቪድዮዎች {/* 'Videos' translated */}
+            ቪድዮታት {/* 'Videos' translated */}
           </button>
           <button
             className={`px-4 py-2 text-lg font-medium border-b-2 ${
@@ -88,7 +89,7 @@ const TigrinyaChannel = () => {
             }`}
             onClick={() => setActiveTab("Playlists")}
           >
-            ዝርዝሮች {/* 'Playlists' translated */}
+            ዝርዝር ደርፍታት {/* 'Playlists' translated */}
           </button>
         </div>
       </div>
@@ -109,12 +110,12 @@ const TigrinyaChannel = () => {
             >
               ✖
             </button>
-            <h2 className="text-lg font-bold mb-2">ስለ መምህር ትግርኛ</h2>{" "}
+            <h2 className="text-lg font-bold mb-2">ብዛዕባ መምህር ትግርኛ</h2>{" "}
             {/* Modal Title translated */}
             <p className="text-gray-700">
-              ይህ ቻናል ትግርኛን በተለይ በመምህራን እንዲቻሉ እና በሚስተር ባህሪ በመጠቀም የትግርኛ ችግኝት
-              በተሞላባት ትምህርት ያበረታታል። 🚀 እባኮትን ለአዳዲስ ስለምርት በቀጣይ እንዲቀርበው እባኮትን
-              ተመዝግቡ!
+              እዛ ቻነል እዚኣ ክትመሃሩን ከተመሓይሹን ክትሕግዘኩምን ናትኩም... ክእለት ኣምሓርኛ ብዘዘናግዕን መሳጥን
+              ትሕዝቶ። 🚀 ሳብስክራይብ ብምግባር ሓድሽ ትምህርቲ፣ መስተጋብራዊ ትሕዝቶን ካልእን ክትረኽቡ ትኽእሉ
+              ኢኹም!
             </p>
           </div>
         </div>
