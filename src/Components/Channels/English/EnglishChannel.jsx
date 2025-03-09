@@ -60,7 +60,9 @@ const EnglishChannel = () => {
         </div>
         <div className="px-3 mt-2">
           <button
-            onClick={() => {}}
+            onClick={() =>
+              window.open("https://www.youtube.com/@memhramharic", "_blank")
+            }
             className="w-full bg-black text-white py-3 rounded-2xl my-4"
           >
             Subscribe

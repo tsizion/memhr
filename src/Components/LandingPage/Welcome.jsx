@@ -10,8 +10,8 @@ const Welcome = () => {
       welcome: "Welcome",
       description: `Welcome to Memhr English Channel, your go-to place for learning, growth, and entertainment! 🚀
 
-We create educational and engaging content to help you improve skills, career opportunities, and general knowledge while enjoying fun and inspiring videos. Our content is designed for a global audience, including Ethiopians and the diaspora, looking to learn, grow, and succeed.`,
-      teacher: "Teacher",
+We create educational and engaging content to help you improve skills, career opportunities, and general knowledge while enjoying fun and inspiring videos.`,
+      teacher: "",
     },
     am: {
       welcome: "እንኳን ደህና መጡ",
@@ -19,7 +19,7 @@ We create educational and engaging content to help you improve skills, career op
 
 በኢትዮጵያ እና በዲያስፖራው ለሚገኙ ኢትዮጵያውያን አዝናኝ እና መሳጭ ቪዲዮዎች እያጣጣሙ ክህሎትን፣ ሙያን እና ዕውቀትን ለማሻሻል የሚረዳ ከፍተኛ ጥራት ያለው የአማርኛ ይዘት እንፈጥራለን።
 `,
-      teacher: "መምህር",
+      teacher: "",
     },
     ti: {
       welcome: "እንኳን ደህና መጡ",
@@ -27,7 +27,7 @@ We create educational and engaging content to help you improve skills, career op
 
 ኣብ ኢትዮጵያን ዲያስፖራን ዝርከቡ ኢትዮጵያውያን ክእለቶም፣ ፍልጠቶም፣ ዓቕሞም ንምምሕያሽ ዝሕግዝ ልዑል ፅሬት ዘለዎ ትሕዝቶ ኣምሓርኛ ንፈጥር እንትኸውን ዘዘናግዑን መሳጢን ቪድዮታት እናቕረብና ኢና። 
 `,
-      teacher: "መምህር",
+      teacher: "",
     },
   };
 

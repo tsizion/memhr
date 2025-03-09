@@ -2,9 +2,13 @@ import React, { useState, useEffect } from "react";
 import { AiOutlineMenu, AiOutlineDown, AiOutlineGlobal } from "react-icons/ai";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { logo } from "../assets";
-import MobileMenu from "./MobileMenu";
 import { useLanguage } from "../Context/LanguageContext";
+import MobileMenu from "./MobileMenu";
+
+// Import different logos
+import logonotext from "../assets/Logo/logonotext.png";
+import logo from "../assets/Logo/memherlogo-removebg-preview.png";
+import logoTi from "../assets/Logo/memherlogo-removebg-preview.png";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,6 +32,13 @@ const Header = () => {
 
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Map language to corresponding logo
+  const logoMap = {
+    en: logonotext,
+    am: logo,
+    ti: logoTi,
+  };
 
   const translations = {
     en: {
@@ -64,22 +75,20 @@ const Header = () => {
 
   return (
     <header
-      className={`header text-sm font-title sticky top-0 z-20 w-full flex flex-row items-center justify-between  py-3 ${
-        isScrolled ? "" : ""
-      } transition-shadow`}
+      className={`header text-sm font-title sticky top-0 z-20 w-full flex flex-row items-center justify-between py-3 transition-shadow`}
     >
       {/* Logo */}
-      <div className="flex items-center ">
+      <div className="flex items-center">
         <img
-          src={logo}
+          src={logoMap[language]} // Select logo based on language
           alt="Logo"
-          className="h-14 md:h-20 w-auto object-contain" // Fixed size for all screens
+          className="h-14 md:h-20 w-auto object-contain"
         />
       </div>
 
       {/* Navigation, Search, and Hamburger Menu */}
       <div className="flex items-center">
-        {/* Search Bar (visible on larger screens, responsive width) */}
+        {/* Search Bar (visible on larger screens) */}
         {!isMenuOpen && (
           <div className="hidden md:flex items-center relative w-full max-w-lg lg:max-w-xl xl:max-w-2xl">
             <FaSearch className="absolute left-8 text-gray-500" />
@@ -92,13 +101,13 @@ const Header = () => {
         )}
 
         {/* Navigation Links */}
-        <nav className="hidden md:flex items-center gap-6 ml-4  w-full">
+        <nav className="hidden md:flex items-center gap-6 ml-4">
           <Link to="/" className="text-gray-700 hover:text-blue-500 transition">
             {translations[language].courses}
           </Link>
           <Link
             to="/"
-            className="text-gray-700 hover:text-blue-500 transition whitespace-nowrap"
+            className="text-gray-700 hover:text-blue-500 transition whitespace-nowrap hyphens-none"
           >
             {translations[language].ebooks}
           </Link>
@@ -135,40 +144,9 @@ const Header = () => {
             )}
           </div>
 
-          {/* Language Dropdown */}
-          {/* <div className="relative">
-            <button
-              onClick={toggleLanguageDropdown}
-              className="flex items-center text-gray-700 hover:text-blue-500 transition"
-            >
-              <AiOutlineGlobal className="text-[18px]" />
-            </button>
-            {isLanguageDropdownOpen && (
-              <div className="absolute top-full mt-2 bg-white shadow-lg rounded-lg py-2 w-40 z-10">
-                <Link
-                  to="/english"
-                  className="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-500 transition"
-                >
-                  English
-                </Link>
-                <Link
-                  to="/amharic"
-                  className="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-500 transition"
-                >
-                  አማርኛ
-                </Link>
-                <Link
-                  to="/tigrinya"
-                  className="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-500 transition"
-                >
-                  ትግርኛ
-                </Link>
-              </div>
-            )}
-          </div> */}
-
+          {/* Sign In Button */}
           <Link to="/" className="text-gray-700 hover:text-blue-500 transition">
-            <button className="w-[100px] bg-primary px-3 py-2 rounded-[5px]  text-white hover:bg-primary-light">
+            <button className="w-[100px] bg-primary px-3 py-2 rounded-[5px] text-white hover:bg-primary-light">
               {translations[language].signIn}
             </button>
           </Link>
