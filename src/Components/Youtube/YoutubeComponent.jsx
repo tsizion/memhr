@@ -41,7 +41,7 @@ const YoutubeComponent = () => {
 
   const translations = {
     en: {
-      title: "Join Our Youtube Channels",
+      title: "Join Our Youtube Channel",
     },
     am: {
       title: "የዩቲዩብ ቻናላችንን ይቀላቀሉ",
