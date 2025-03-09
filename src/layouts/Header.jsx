@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { logo } from "../assets";
 import MobileMenu from "./MobileMenu";
 import { useLanguage } from "../Context/LanguageContext";
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,7 +32,7 @@ const Header = () => {
   const translations = {
     en: {
       courses: "Courses",
-      playlists: "Playlists",
+      ebooks: "E-Books",
       about: "About",
       adult: "Adult",
       kid: "Kid",
@@ -43,7 +42,7 @@ const Header = () => {
     },
     am: {
       courses: "ኮርሶች",
-      playlists: "ፕሌይሊስቶች",
+      ebooks: "ኢ-መጽሓፍ",
       about: "ስለእኛ",
       adult: "ለአዋቂ",
       kid: "ለልጅ",
@@ -53,7 +52,7 @@ const Header = () => {
     },
     ti: {
       courses: "ኮርሳት",
-      playlists: "ፕሌይሊስቶች",
+      ebooks: "ኢ-መጽሓፍ",
       about: "ብዛዕባና ዝምልከት",
       adult: "ንዓቢ ሰብ",
       kid: "ህፃውንቲ",
@@ -65,16 +64,16 @@ const Header = () => {
 
   return (
     <header
-      className={`header text-sm font-title sticky top-0 z-20 w-full flex flex-row items-center justify-between px-6 py-3 ${
+      className={`header text-sm font-title sticky top-0 z-20 w-full flex flex-row items-center justify-between  py-3 ${
         isScrolled ? "" : ""
       } transition-shadow`}
     >
       {/* Logo */}
-      <div className="flex items-center">
+      <div className="flex items-center ">
         <img
           src={logo}
           alt="Logo"
-          className="h-20 w-auto object-contain" // Fixed size for all screens
+          className="h-14 md:h-20 w-auto object-contain" // Fixed size for all screens
         />
       </div>
 
@@ -93,16 +92,17 @@ const Header = () => {
         )}
 
         {/* Navigation Links */}
-        <nav className="hidden md:flex items-center gap-8 ml-6">
+        <nav className="hidden md:flex items-center gap-6 ml-4  w-full">
           <Link to="/" className="text-gray-700 hover:text-blue-500 transition">
             {translations[language].courses}
           </Link>
           <Link
-            to="/english"
-            className="text-gray-700 hover:text-blue-500 transition"
+            to="/"
+            className="text-gray-700 hover:text-blue-500 transition whitespace-nowrap"
           >
-            {translations[language].playlists}
+            {translations[language].ebooks}
           </Link>
+
           <Link to="/" className="text-gray-700 hover:text-blue-500 transition">
             {translations[language].about}
           </Link>

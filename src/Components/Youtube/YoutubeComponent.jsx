@@ -6,10 +6,10 @@ import { useLanguage } from "../../Context/LanguageContext";
 const youtubeChannels = [
   {
     id: "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-    name: "Memher English",
+    name: "Memhr English",
     subscribers: "38 subscribers",
     description:
-      "Welcome to Memher English! Your place for learning, growth, and entertainment. 🚀",
+      "Welcome to Memhr English! Your place for learning, growth, and entertainment. 🚀",
     cover: amharicbanner,
     path: "/englishChannel",
   },

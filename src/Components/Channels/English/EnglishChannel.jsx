@@ -59,7 +59,10 @@ const EnglishChannel = () => {
           </button>
         </div>
         <div className="px-3 mt-2">
-          <button className="w-full bg-black text-white py-3 rounded-2xl my-4">
+          <button
+            onClick={() => {}}
+            className="w-full bg-black text-white py-3 rounded-2xl my-4"
+          >
             Subscribe
           </button>
         </div>

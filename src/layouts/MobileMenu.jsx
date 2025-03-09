@@ -7,7 +7,7 @@ import { logo } from "../assets";
 const MobileMenu = ({ isOpen, toggleMenu }) => {
   return (
     <div
-      className={`fixed top-0 left-0 h-full w-2/3 bg-gray-900 text-white transform transition-all duration-300 ${
+      className={`fixed top-0 left-0 h-full w-2/3 bg-[#1a1a1a] text-white transform transition-all duration-300 ${
         isOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >

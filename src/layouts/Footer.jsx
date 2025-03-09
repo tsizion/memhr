@@ -125,7 +125,7 @@ const Footer = () => {
                   href="mailto:info@example.com"
                   className="hover:text-blue-500 transition"
                 >
-                  info@example.com
+                  Help@memhr.com
                 </a>
               </li>
               <li>
@@ -134,12 +134,12 @@ const Footer = () => {
                   href="tel:+123456789"
                   className="hover:text-blue-500 transition"
                 >
-                  +123 456 789
+                  +4792133413
                 </a>
               </li>
               <li>
-                <span className="font-bold">{currentContent.address}</span> 123
-                Main Street, City, Country
+                <span className="font-bold">{currentContent.address}</span>{" "}
+                Gangstøvikvegen 128, 6009 Ålesund
               </li>
             </ul>
           </div>

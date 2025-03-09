@@ -85,8 +85,8 @@ const Services = () => {
   return (
     <div className="flex flex-col items-center justify-center p-8 bg-white">
       <h2 className="text-2xl font-bold mb-9 text-center font-title text-primary">
-        {language === "en" && "What can you find on Memher?"}
-        {language === "am" && "Memher ላይ ምን ማግኘት ይችላሉ?"}
+        {language === "en" && "What can you find on Memhr?"}
+        {language === "am" && "መምህር ላይ ምን ማግኘት ይችላሉ?"}
         {language === "ti" && "ኣብ መመሄር እንታይ ክትረኽቡ ትኽእሉ?"}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full h-auto max-w-5xl">
