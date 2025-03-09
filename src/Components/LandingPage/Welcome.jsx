@@ -33,7 +33,9 @@ We create educational and engaging content to help you improve skills, career op
 
   return (
     <div className="flex flex-col w-[88%]">
-      <h1 className="text-black">{translations[language].welcome}</h1>
+      <h1 className="text-black text-sm md:text-lg whitespace-nowrap">
+        {translations[language].welcome}
+      </h1>
       <div className="h-auto rounded-2xl bg-primary w-full my-5 px-4 py-4">
         <h3 className="mb-1 text-lg xsm:text-[10px] font-body ">
           {translations[language].teacher}

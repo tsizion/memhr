@@ -6,12 +6,13 @@ import { useLanguage } from "../../Context/LanguageContext";
 const youtubeChannels = [
   {
     id: "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-    name: "Memhr English",
+    name: "Memher English",
     subscribers: "38 subscribers",
     description:
-      "Welcome to Memhr English! Your place for learning, growth, and entertainment. 🚀",
+      "Welcome to Memher English! Your place for learning, growth, and entertainment. 🚀",
     cover: amharicbanner,
     path: "/englishChannel",
+    lang: "en",
   },
   {
     id: "UC29ju8bIPH5as8OGnQzwJyA",
@@ -21,6 +22,7 @@ const youtubeChannels = [
       "🤗 እንኳን ወደ መምህር የአማርኛ ቻናል በደህና መጡ! የመማር፣ የእድገት እና የመዝናኛ ቦታዎ! 🚀",
     cover: amharicbanner,
     path: "/amharicChannel",
+    lang: "am",
   },
   {
     id: "UCFbNIlppjAuEX4znoulh0Cw",
@@ -29,6 +31,7 @@ const youtubeChannels = [
     description: "🤗 እንቋዕ ናብ መምህር ትግርኛ ብደሓን መጻእኩም! ንመምሃሪን ዕብየትን መዘናግዕን ቦታኻ",
     cover: amharicbanner,
     path: "/tigrinyaChannel",
+    lang: "ti",
   },
 ];
 
@@ -44,9 +47,14 @@ const YoutubeComponent = () => {
       title: "የዩቲዩብ ቻናላችንን ይቀላቀሉ",
     },
     ti: {
-      title: " ኣብ የዩቲዩብ ቻነላትና ተጸንበሩ",
+      title: "ኣብ የዩቲዩብ ቻነላትና ተጸንበሩ",
     },
   };
+
+  // Filter channels based on the current language
+  const filteredChannels = youtubeChannels.filter(
+    (channel) => channel.lang === language
+  );
 
   return (
     <>
@@ -54,7 +62,7 @@ const YoutubeComponent = () => {
         {translations[language].title}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
-        {youtubeChannels.map((channel) => (
+        {filteredChannels.map((channel) => (
           <div
             key={channel.id}
             onClick={() => navigate(channel.path)}

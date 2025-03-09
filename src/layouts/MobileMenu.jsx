@@ -1,10 +1,47 @@
-import React from "react";
-import { AiOutlineClose } from "react-icons/ai";
+import React, { useState } from "react";
+import { AiOutlineClose, AiOutlineDown } from "react-icons/ai";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { logo } from "../assets";
 
-const MobileMenu = ({ isOpen, toggleMenu }) => {
+const MobileMenu = ({ isOpen, toggleMenu, language }) => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  // Translations for the mobile menu (same as desktop)
+  const translations = {
+    en: {
+      courses: "Courses",
+      ebooks: "E-Books",
+      about: "About",
+      adult: "Adult",
+      kid: "Kid",
+      signIn: "Sign In",
+      searchPlaceholder: "Search....",
+    },
+    am: {
+      courses: "ኮርሶች",
+      ebooks: "ኢ-መጽሓፍ",
+      about: "ስለእኛ",
+      adult: "ለአዋቂ",
+      kid: "ለልጅ",
+      signIn: "ግባ",
+      searchPlaceholder: "ፈልግ....",
+    },
+    ti: {
+      courses: "ኮርሳት",
+      ebooks: "ኢ-መጽሓፍ",
+      about: "ብዛዕባና ዝምልከት",
+      adult: "ንዓቢ ሰብ",
+      kid: "ህፃውንቲ",
+      signIn: "ግባ",
+      searchPlaceholder: "ፈልግ....",
+    },
+  };
+
+  // Default language fallback to 'en' if language is undefined or invalid
+  const currentLanguage = translations[language] ? language : "en";
+  const t = translations[currentLanguage];
+
   return (
     <div
       className={`fixed top-0 left-0 h-full w-2/3 bg-[#1a1a1a] text-white transform transition-all duration-300 ${
@@ -29,7 +66,7 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
         <FaSearch className="absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-500" />
         <input
           type="text"
-          placeholder="Search..."
+          placeholder={t.searchPlaceholder}
           className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
         />
       </div>
@@ -40,45 +77,72 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
           <Link
             to="/"
             onClick={toggleMenu}
-            className="block hover:text-blue-400"
+            className="text-gray-700 hover:text-blue-500 transition"
           >
-            Home
+            {t.courses}
           </Link>
         </li>
         <li>
           <Link
             to="/"
             onClick={toggleMenu}
-            className="block hover:text-blue-400"
+            className="text-gray-700 hover:text-blue-500 transition"
           >
-            About
+            {t.ebooks}
           </Link>
         </li>
         <li>
           <Link
             to="/"
             onClick={toggleMenu}
-            className="block hover:text-blue-400"
+            className="text-gray-700 hover:text-blue-500 transition"
           >
-            Services
+            {t.about}
           </Link>
         </li>
+
+        {/* Dropdown for Adult/Kid */}
+        <li className="relative">
+          <button
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            className="flex items-center text-gray-700 hover:text-blue-500 transition"
+          >
+            {t.adult} <AiOutlineDown className="ml-1" />
+          </button>
+          {isDropdownOpen && (
+            <ul className="absolute top-full mt-2 bg-white shadow-lg rounded-lg py-2 w-full">
+              <li>
+                <Link
+                  to="/"
+                  onClick={toggleMenu}
+                  className="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-500 transition"
+                >
+                  {t.kid}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/"
+                  onClick={toggleMenu}
+                  className="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-500 transition"
+                >
+                  {t.adult}
+                </Link>
+              </li>
+            </ul>
+          )}
+        </li>
+
+        {/* Sign In Button */}
         <li>
           <Link
             to="/"
             onClick={toggleMenu}
-            className="block hover:text-blue-400"
+            className="text-gray-700 hover:text-blue-500 transition"
           >
-            Blog
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/"
-            onClick={toggleMenu}
-            className="block hover:text-blue-400"
-          >
-            Contact
+            <button className="w-[100px] bg-primary px-3 py-2 rounded-[5px] text-white hover:bg-primary-light">
+              {t.signIn}
+            </button>
           </Link>
         </li>
       </ul>
