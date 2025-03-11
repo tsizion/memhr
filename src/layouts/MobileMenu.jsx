@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { AiOutlineClose, AiOutlineDown } from "react-icons/ai";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { logo } from "../assets";
+import { useLanguage } from "../Context/LanguageContext"; // Import the context
 
-const MobileMenu = ({ isOpen, toggleMenu, language }) => {
+// Import logos for each language
+import logoEn from "../assets/Logo/MEMHR ENG.png";
+import logoAm from "../assets/Logo/memherlogo-removebg-preview.png";
+import logoTi from "../assets/Logo/memherlogo-removebg-preview.png";
+
+const MobileMenu = ({ isOpen, toggleMenu }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const { language } = useLanguage(); // Get the current language from context
 
   // Translations for the mobile menu (same as desktop)
   const translations = {
@@ -38,9 +44,17 @@ const MobileMenu = ({ isOpen, toggleMenu, language }) => {
     },
   };
 
+  // Logo mapping for each language
+  const logos = {
+    en: logoEn,
+    am: logoAm,
+    ti: logoTi,
+  };
+
   // Default language fallback to 'en' if language is undefined or invalid
   const currentLanguage = translations[language] ? language : "en";
   const t = translations[currentLanguage];
+  const logo = logos[currentLanguage]; // Get the correct logo based on the language
 
   return (
     <div
@@ -50,9 +64,9 @@ const MobileMenu = ({ isOpen, toggleMenu, language }) => {
     >
       <div className="p-4 flex items-center">
         <img
-          src={logo}
+          src={logo} // Dynamically change logo based on the language
           alt="Logo"
-          className="h-20 w-auto object-contain" // Consistent logo size in menu
+          className="h-20 w-40 object-contain" // Consistent logo size in menu
         />
         <AiOutlineClose
           size={24}
