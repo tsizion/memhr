@@ -34,9 +34,9 @@ const Services = () => {
   // Ensure fallbacks for missing language keys
   const serviceTitles = {
     en: {
-      ebook: "Buy e-book",
-      course: "Buy Course",
-      product: "Buy products",
+      ebook: "Buy E-books",
+      course: "Buy Courses",
+      product: "Buy Products",
     },
     am: {
       ebook: "ኢ-መጽሐፍ ይግዙ",

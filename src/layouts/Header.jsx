@@ -6,7 +6,7 @@ import { useLanguage } from "../Context/LanguageContext";
 import MobileMenu from "./MobileMenu";
 
 // Import different logos
-import logonotext from "../assets/Logo/logonotext.png";
+import memherEng from "../assets/Logo/MEMHR ENG.png";
 import logo from "../assets/Logo/memherlogo-removebg-preview.png";
 import logoTi from "../assets/Logo/memherlogo-removebg-preview.png";
 const Header = () => {
@@ -35,7 +35,7 @@ const Header = () => {
 
   // Map language to corresponding logo
   const logoMap = {
-    en: logonotext,
+    en: memherEng,
     am: logo,
     ti: logoTi,
   };
@@ -82,7 +82,7 @@ const Header = () => {
         <img
           src={logoMap[language]} // Select logo based on language
           alt="Logo"
-          className="h-14 md:h-20 w-auto object-contain"
+          className="h-14 md:h-20 w-40 object-contain"
         />
       </div>
 

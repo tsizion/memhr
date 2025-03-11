@@ -23,8 +23,10 @@ import amharicbanner from "./Channels/AmharicChannel.jpg";
 import englishbanner from "./Channels/EnglishChannel.jpg";
 import tigrinyabanner from "./Channels/tigreynaChannel.jpg";
 import logonotext from "./Logo/logonotext.png";
+import memherEng from "./Logo/MEMHR ENG.png";
 
 export {
+  memherEng,
   logonotext,
   logomemeher,
   logo,
