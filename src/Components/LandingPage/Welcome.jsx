@@ -22,7 +22,7 @@ We create educational and engaging content to help you improve skills, career op
       teacher: "",
     },
     ti: {
-      welcome: "እንካዕ ብደሓን መጻኩም።",
+      welcome: "እንኳዕ ብደሓን መጻኩም።",
       description: `🤗 እንካዕ ናብ መምህር ትግርኛ ቻነል መምሃሪ፣ ዕብየት፣ መዘናግዒ ቦታኹም ብደሓን መጻእኩም! 🚀 
 
 ኣብ ኢትዮጵያን ዲያስፖራን ዝርከቡ ኢትዮጵያውያን ክእለቶም፣ ፍልጠቶም፣ ዓቕሞም ንምምሕያሽ ዝሕግዝ ልዑል ፅሬት ዘለዎ ትሕዝቶ ኣምሓርኛ ንፈጥር እንትኸውን ዘዘናግዑን መሳጢን ቪድዮታት እናቕረብና ኢና። 

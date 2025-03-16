@@ -203,7 +203,7 @@ const SkillsSection = () => {
       text: {
         en: "Basic Computer Skills",
         am: "መሰረታዊ ኮምፒዩተር ክህሎቶች",
-        ti: "መሰረታዊ ኮምፒዩተር ክህሎቶች",
+        ti: "መሰረታዊ ክእለት ኮምፒተር",
       },
     },
     {
@@ -212,7 +212,7 @@ const SkillsSection = () => {
       text: {
         en: "Self-Improvement Skills",
         am: "ራስ ማሻሻያ ክህሎቶች",
-        ti: "ራስ ማሻሻያ ክህሎቶች",
+        ti: " ርእሰ-ምምሕያሽ ክእለት",
       },
     },
     {
@@ -220,8 +220,8 @@ const SkillsSection = () => {
       image: skill3,
       text: {
         en: "Communication Skills",
-        am: "እንቅስቃሴ ክህሎቶች",
-        ti: "እንቅስቃሴ ክህሎቶች",
+        am: "የተግባቦት  ክህሎቶች",
+        ti: "ናይ ምንቅስቓስ ክእለት",
       },
     },
     {
@@ -230,7 +230,7 @@ const SkillsSection = () => {
       text: {
         en: "Leadership Skills",
         am: "መሪነት ክህሎቶች",
-        ti: "መሪነት ክህሎቶች",
+        ti: "ናይ ኣመራርሓ ክእለት",
       },
     },
   ];

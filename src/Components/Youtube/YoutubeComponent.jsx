@@ -1,6 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { amharicbanner, YoutubeIcon } from "../../assets";
+import {
+  amharicbanner,
+  englishbanner,
+  tigrinyabanner,
+  YoutubeIcon,
+} from "../../assets";
 import { useLanguage } from "../../Context/LanguageContext";
 
 const youtubeChannels = [
@@ -10,7 +15,7 @@ const youtubeChannels = [
     subscribers: "38 subscribers",
     description:
       "Welcome to Memher English! Your place for learning, growth, and entertainment. 🚀",
-    cover: amharicbanner,
+    cover: englishbanner,
     path: "/englishChannel",
     lang: "en",
   },
@@ -28,8 +33,8 @@ const youtubeChannels = [
     id: "UCFbNIlppjAuEX4znoulh0Cw",
     name: "መምህር ትግርኛ",
     subscribers: "36 subscribers",
-    description: "🤗 እንቋዕ ናብ መምህር ትግርኛ ብደሓን መጻእኩም! ንመምሃሪን ዕብየትን መዘናግዕን ቦታኻ",
-    cover: amharicbanner,
+    description: "🤗 እንኳዕ ናብ መምህር ትግርኛ ብደሓን መጻእኩም! ንመምሃሪን ዕብየትን መዘናግዕን ቦታኻ",
+    cover: tigrinyabanner,
     path: "/tigrinyaChannel",
     lang: "ti",
   },

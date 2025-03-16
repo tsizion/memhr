@@ -44,7 +44,7 @@ const Header = () => {
     en: {
       courses: "Courses",
       ebooks: "E-Books",
-      about: "About",
+      about: "About Us",
       adult: "Adult",
       kid: "Kid",
       signIn: "Sign In",
@@ -67,9 +67,9 @@ const Header = () => {
       about: "ብዛዕባና ዝምልከት",
       adult: "ንዓቢ ሰብ",
       kid: "ህፃውንቲ",
-      signIn: "ግባ",
+      signIn: "እተ",
       joinSocial: "ከማህበረሰባችን ሚዲያ ጋር ተያይዞ ይተላለፉ",
-      searchPlaceholder: "ፈልግ....",
+      searchPlaceholder: "አልሽ....",
     },
   };
 

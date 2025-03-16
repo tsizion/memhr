@@ -3,7 +3,13 @@ import { courses, ebook, shop } from "../../assets/index";
 import ComingSoon from "../ComingSoon"; // Import the ComingSoon component
 import { useLanguage } from "../../Context/LanguageContext"; // Import the useLanguage hook
 
-const ServiceCard = ({ icon, title, description, onGetStarted }) => {
+const ServiceCard = ({
+  icon,
+  title,
+  description,
+  buttonText,
+  onGetStarted,
+}) => {
   return (
     <div className="text-gray-800 bg-white border-[0.9px] border-primary px-6 py-8 rounded-2xl shadow-lg flex flex-col items-center justify-center text-center transition-transform duration-300 transform hover:scale-105 hover:shadow-xl">
       <img src={icon} alt={title} className="w-12 h-12 mb-4" />
@@ -13,7 +19,7 @@ const ServiceCard = ({ icon, title, description, onGetStarted }) => {
         onClick={onGetStarted}
         className="bg-primary-orange text-white text-sm px-4 py-2 rounded-md hover:bg-orange-600"
       >
-        Get Started
+        {buttonText}
       </button>
     </div>
   );
@@ -31,81 +37,87 @@ const Services = () => {
     setIsComingSoonOpen(false); // Close the modal when the close button is clicked
   };
 
-  // Ensure fallbacks for missing language keys
+  // Translations for Service Titles
   const serviceTitles = {
     en: {
       ebook: "Buy E-books",
       course: "Buy Courses",
       product: "Buy Products",
     },
-    am: {
-      ebook: "ኢ-መጽሐፍ ይግዙ",
-      course: "ኮርስ ይግዙ",
-      product: "ምርቶችን ይግዙ",
-    },
-    ti: {
-      ebook: "ኢ-መጽሓፍ ግዝኡ",
-      course: "ኮርስ ዕድጊ",
-      product: "ፍርያት ምግዛእ",
-    },
+    am: { ebook: "ኢ-መጽሐፍ ይግዙ", course: "ኮርስ ይግዙ", product: "ምርቶችን ይግዙ" },
+    ti: { ebook: "ኢ-መጽሓፍ ግዝኡ", course: "ኮርስ ዕድጊ", product: "ፍርያት ምግዛእ" },
   };
 
+  // Placeholder descriptions
   const serviceDescriptions = {
     en: {
-      ebook:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      course:
-        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      product:
-        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      ebook: "Lorem ipsum dolor sit amet...",
+      course: "Lorem ipsum dolor sit amet...",
+      product: "Lorem ipsum dolor sit amet...",
     },
     am: {
-      ebook:
-        "ሎሬም ኢፕሰም ዶሎር ሲት አሜት፣ ኮንሰክተቱር አድፒሲንግ ኤሊት። ሴድ ዶ ኢዩዝሞድ ቴምፖር ኢንሲዲዱንት ኡት ላቦሬ ኤት ዶሎሬ ማግና አሊኩዋ።",
-      course:
-        "ሎሬም ኢፕሰም ዶሎር ሲት አሜት፣ ኮንሰክተቱር አድፒሲንግ ኤሊት። ሴድ ዶ ኢዩዝሞድ ቴምፖር ኢንሲዲዱንት ኡት ላቦሬ ኤት ዶሎሬ ማግና አሊኩዋ።",
-      product:
-        "ሎሬም ኢፕሰም ዶሎር ሲት አሜት፣ ኮንሰክተቱር አድፒሲንግ ኤሊት። ሴድ ዶ ኢዩዝሞድ ቴምፖር ኢንሲዲዱንት ኡት ላቦሬ ኤት ዶሎሬ ማግና አሊኩዋ።",
+      ebook: "ሎሬም ኢፕሰም ዶሎር ሲት አሜት...",
+      course: "ሎሬም ኢፕሰም ዶሎር ሲት አሜት...",
+      product: "ሎሬም ኢፕሰም ዶሎር ሲት አሜት...",
     },
     ti: {
-      ebook:
-        "ሎሬም ኢፕሰም ዶሎር ሲት አሜት፣ ኮንሰክተቱር አድፒሲንግ ኤሊት። ሴድ ዶ ኢዩዝሞድ ቴምፖር ኢንሲዲዱንት ኡት ላቦሬ ኤት ዶሎሬ ማግና አሊኩዋ።",
-      course:
-        "ሎሬም ኢፕሰም ዶሎር ሲት አሜት፣ ኮንሰክተቱር አድፒሲንግ ኤሊት። ሴድ ዶ ኢዩዝሞድ ቴምፖር ኢንሲዲዱንት ኡት ላቦሬ ኤት ዶሎሬ ማግና አሊኩዋ።",
-      product:
-        "ሎሬም ኢፕሰም ዶሎር ሲት አሜት፣ ኮንሰክተቱር አድፒሲንግ ኤሊት። ሴድ ዶ ኢዩዝሞድ ቴምፖር ኢንሲዲዱንት ኡት ላቦሬ ኤት ዶሎሬ ማግና አሊኩዋ።",
+      ebook: "ሎሬም ኢፕሰም ዶሎር ሲት አሜት...",
+      course: "ሎሬም ኢፕሰም ዶሎር ሲት አሜት...",
+      product: "ሎሬም ኢፕሰም ዶሎር ሲት አሜት...",
     },
   };
 
-  // Safely access titles and descriptions for the current language
-  const currentTitles = serviceTitles[language] || serviceTitles["en"];
-  const currentDescriptions =
-    serviceDescriptions[language] || serviceDescriptions["en"];
+  // Translations for "Get Started" Button
+  const getStartedTranslations = {
+    en: "Get Started",
+    am: "ጀምር",
+    ti: "ጀምር",
+  };
 
   return (
     <div className="flex flex-col items-center justify-center p-8 bg-white">
       <h2 className="text-2xl font-bold mb-9 text-center font-title text-primary">
         {language === "en" && "What can you find on Memhr?"}
         {language === "am" && "መምህር ላይ ምን ማግኘት ይችላሉ?"}
-        {language === "ti" && "ኣብ መመሄር እንታይ ክትረኽቡ ትኽእሉ?"}
+        {language === "ti" && "ኣብ መምህር እንታይ ክትረኽቡ ትኽእሉ?"}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full h-auto max-w-5xl">
         <ServiceCard
           icon={ebook}
-          title={currentTitles.ebook}
-          description={currentDescriptions.ebook}
+          title={serviceTitles[language]?.ebook || serviceTitles["en"].ebook}
+          description={
+            serviceDescriptions[language]?.ebook ||
+            serviceDescriptions["en"].ebook
+          }
+          buttonText={
+            getStartedTranslations[language] || getStartedTranslations["en"]
+          }
           onGetStarted={handleGetStartedClick}
         />
         <ServiceCard
           icon={courses}
-          title={currentTitles.course}
-          description={currentDescriptions.course}
+          title={serviceTitles[language]?.course || serviceTitles["en"].course}
+          description={
+            serviceDescriptions[language]?.course ||
+            serviceDescriptions["en"].course
+          }
+          buttonText={
+            getStartedTranslations[language] || getStartedTranslations["en"]
+          }
           onGetStarted={handleGetStartedClick}
         />
         <ServiceCard
           icon={shop}
-          title={currentTitles.product}
-          description={currentDescriptions.product}
+          title={
+            serviceTitles[language]?.product || serviceTitles["en"].product
+          }
+          description={
+            serviceDescriptions[language]?.product ||
+            serviceDescriptions["en"].product
+          }
+          buttonText={
+            getStartedTranslations[language] || getStartedTranslations["en"]
+          }
           onGetStarted={handleGetStartedClick}
         />
       </div>
