@@ -112,7 +112,10 @@ const Header = () => {
             {translations[language].ebooks}
           </Link>
 
-          <Link to="/" className="text-gray-700 hover:text-blue-500 transition">
+          <Link
+            to="/"
+            className="text-gray-700 hover:text-blue-500  whitespace-nowrap hyphens-none transition"
+          >
             {translations[language].about}
           </Link>
 
